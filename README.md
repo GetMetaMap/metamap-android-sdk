@@ -29,11 +29,16 @@ In the onCreate() method of your application class, initialize Mati by calling t
     @Override
     public void onCreate() {
         super.onCreate();
-
         Mati.init(this, "your client ID here");
       }
     }
    
+Your application tag in manifest should include the application class that was created
+
+    <application
+        android:name=".MyApplication"
+        ...
+
 ## Mati KYC Button Placement (UI)
 
 You now need to place the Mati KYC button inside your App. Add it to your layout XML file:
