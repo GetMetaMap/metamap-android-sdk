@@ -7,14 +7,14 @@ Our SDK requires Android v5.0 (API v21) or above.
 
 1. Ensure that your top-level build.gradle contains a reference to the following repository:
 
-    jcenter()
+        jcenter()
     
 ![alt text](https://github.com/MatiFace/mati-global-id-sdk-android/blob/master/Screenshot%20from%202019-03-25%2014-22-45.png?raw=true)
 
 2. Open the build.gradle file inside your application module directory and include the following dependencies into build.gradle file of your app:
 
-    implementation 'com.matilock:mati-global-id-sdk:0.0.8'
-    
+        implementation 'com.matilock:mati-global-id-sdk:0.0.8'
+        
 ![alt text](https://github.com/MatiFace/mati-global-id-sdk-android/blob/master/Screenshot%20from%202019-03-25%2014-32-01.png?raw=true)
     
 Once you make these two changes, simply sync your project with gradle.
