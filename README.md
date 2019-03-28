@@ -91,3 +91,8 @@ And in your onActivityResult method, call mCallbackManager.onActivityResult to p
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
       }
+      
+      
+## Mati Android SDK integration video    
+
+[![Mati SDK integration demo video](https://img.youtube.com/vi/qDBjiBwyVF8/0.jpg)](https://www.youtube.com/watch?v=qDBjiBwyVF8)
