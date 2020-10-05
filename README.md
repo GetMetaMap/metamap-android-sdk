@@ -9,7 +9,7 @@ Our SDK requires Android v5.0 (API v21) or above.
 
         jcenter()
     
-![alt text](https://github.com/MatiFace/mati-global-id-sdk-android/blob/master/Screenshot%20from%202019-03-25%2014-22-45.png?raw=true)
+![alt text](https://github.com/MatiFace/mati-global-id-sdk-integration-android/blob/master/Screenshot%20from%202019-03-25%2014-22-45.png)
 
 2. Open the build.gradle file inside your application module directory and include the following dependencies into build.gradle file of your app:
 Check this for latest version: https://bintray.com/matibiometricskyc/maven/mati-global-id-sdk
@@ -20,7 +20,7 @@ Check this for latest version: https://bintray.com/matibiometricskyc/maven/mati-
         
         implementation 'com.matilock:mati-global-id-sdk:2.8.0'
         
-![alt text](https://github.com/MatiFace/mati-global-id-sdk-android/blob/master/Screenshot%20from%202019-03-25%2014-32-01.png?raw=true)
+![alt text](https://github.com/MatiFace/mati-global-id-sdk-integration-android/blob/master/Screenshot%20from%202019-03-25%2014-32-01.png)
     
 Once you make these two changes, simply sync your project with gradle.
 
