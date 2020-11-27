@@ -18,7 +18,7 @@ Check this for latest version: https://bintray.com/matibiometricskyc/maven/mati-
         
         example:
         
-        implementation 'com.matilock:mati-global-id-sdk:2.9.0'
+        implementation 'com.matilock:mati-global-id-sdk:2.9.1'
         
 ![alt text](https://github.com/MatiFace/mati-global-id-sdk-integration-android/blob/master/Screenshot%20from%202019-03-25%2014-32-01.png)
     
