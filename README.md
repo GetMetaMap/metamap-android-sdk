@@ -10,7 +10,7 @@ Ensure that your top-level build.gradle contains a reference to the following re
 
 Add this line into gradle dependencies
   
-    implementation 'com.matilock:mati-global-id-sdk:3.0.0'
+    implementation 'com.matilock:mati-global-id-sdk:3.0.2'
     
 Sync project with gradle files
     
@@ -29,6 +29,7 @@ You now need to place the MatiButton inside your App.
         android:id="@+id/matiKYCButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+	mati:text="BUTTON TITLE" // YOU CAN SET IT IN setParams PROGRAMATICALLY
         android:layout_margin="16dp"
         android:layout_gravity="center"/>
     
@@ -42,7 +43,7 @@ You now need to place the MatiButton inside your App.
 
         setContentView(R.layout.activity_main);
 
-        this.<MatiButton>findViewById(R.id.matiKYCButton).setParams("YOUR_CLIENT_ID","YOUR_FLOW_ID", METADATA);
+        this.<MatiButton>findViewById(R.id.matiKYCButton).setParams("YOUR_CLIENT_ID", "BUTTON_TITLE" , "YOUR_FLOW_ID", METADATA);
     }
     
 #### 3) Implement callback handling into YOUR_ACTIVITY.java
@@ -84,6 +85,7 @@ public class YourActivity extends AppCompatActivity implements MatiCallback {
         this.<MatiButton>findViewById(R.id.matiKYCButton).setParams(
                 getString("YOUR_CLIENT_ID",
                 "YOUR_FLOW_ID",
+		"BUTTON_TITLE",
                 new Metadata.Builder()
                         .with("key_1", "value1")
                         .with("key2", 2)
