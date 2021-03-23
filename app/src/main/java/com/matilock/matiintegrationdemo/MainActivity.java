@@ -2,12 +2,14 @@ package com.matilock.matiintegrationdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.getmati.mati_sdk.MatiButton;
 import com.getmati.mati_sdk.Metadata;
 import com.getmati.mati_sdk.kyc.KYCActivity;
+
 
 public class MainActivity  extends AppCompatActivity {
 
@@ -20,7 +22,6 @@ public class MainActivity  extends AppCompatActivity {
 
         btn.setParams("YOUR_CLIENT_ID",
                 "YOUR_FLOW_ID",
-                "Default flow",
                 new Metadata.Builder()
                         .with("userId", "qwfguweo")
                         .with("type", 2)
