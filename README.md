@@ -5,11 +5,11 @@
 
 Ensure that your top-level build.gradle contains a reference to the following repository:
 
-	 jcenter()
+	 maven { url 'https://repo1.maven.org/maven2' }
 
 Add this line into gradle dependencies
   
-    implementation 'com.getmati:mati-sdk:3.0.3'
+    implementation 'com.getmati:mati-sdk:3.1.1'
     
 Sync project with gradle files
     
@@ -21,13 +21,12 @@ Sync project with gradle files
 
 #### 1) You now need to place MatiButton inside your layout
 ```xml    
-<com.matilock.mati_kyc_sdk.MatiButton
-    android:id="@+id/matiKYCButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    mati:text="$CUSTOM_TITLE" 
-    android:layout_margin="16dp"
-    android:layout_gravity="center"/>
+<com.getmati.mati_sdk.MatiButton
+        android:id="@+id/matiKYCButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:text="YOUR CUSTOM TEXT" />
 ```
 
 #### 2) In order to authorize app and start verification, call setParams with the following arguments:
