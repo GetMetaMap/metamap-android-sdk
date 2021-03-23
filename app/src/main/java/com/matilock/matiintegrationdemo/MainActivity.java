@@ -2,50 +2,43 @@ package com.matilock.matiintegrationdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
-import com.matilock.mati_kyc_sdk.LoginError;
-import com.matilock.mati_kyc_sdk.LoginResult;
-import com.matilock.mati_kyc_sdk.Mati;
-import com.matilock.mati_kyc_sdk.MatiCallback;
-import com.matilock.mati_kyc_sdk.MatiCallbackManager;
-import com.matilock.mati_kyc_sdk.MatiLoginManager;
-import com.matilock.mati_kyc_sdk.utils.Util;
+import com.matilock.mati_kyc_sdk.MatiButton;
+import com.matilock.mati_kyc_sdk.Metadata;
+import com.matilock.mati_kyc_sdk.kyc.KYCActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity  extends AppCompatActivity implements MatiCallback {
-
-    private MatiCallbackManager mCallbackManager = MatiCallbackManager.createNew();
+public class MainActivity  extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MatiLoginManager.getInstance().registerCallback(mCallbackManager, this);
+        MatiButton btn = findViewById(R.id.matiKYCButton);
+
+        btn.setParams("YOUR_CLIENT_ID",
+                "YOUR_FLOW_ID",
+                "Default flow",
+                new Metadata.Builder()
+                        .with("userId", "qwfguweo")
+                        .with("type", 2)
+                        .build());
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        mCallbackManager.onActivityResult(requestCode, resultCode, data);
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    public void onSuccess(LoginResult pLoginResult) {
-        if (pLoginResult.isSuccess()) {
-            Util.showShortMessage(MainActivity.this, "Successfully logged in!");
-            Mati.getInstance().setIdentityId(pLoginResult.getIdentityId());
+        if(requestCode == KYCActivity.REQUEST_CODE) {
+            if(resultCode == RESULT_OK) {
+              //  Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(KYCActivity.ARG_VERIFICATION_ID), Toast.LENGTH_LONG).show();
+            } else {
+               // Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(KYCActivity.ARG_VERIFICATION_ID), Toast.LENGTH_LONG).show();
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
-    @Override
-    public void onCancel() {
-        Util.showShortMessage(MainActivity.this, "Cancelled");
-    }
-
-    @Override
-    public void onError(LoginError pLoginError) {
-        Util.showSmthWrongMessage(MainActivity.this);
-    }
 }

@@ -6,10 +6,11 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.matilock.mati_kyc_sdk.MatiLoginButton
+    <com.matilock.mati_kyc_sdk.MatiButton
+        android:id="@+id/matiKYCButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:elevation="10dp"
-        app:text="Custom text" />
+        android:layout_margin="16dp"
+        android:layout_gravity="center" />
+
 </LinearLayout>

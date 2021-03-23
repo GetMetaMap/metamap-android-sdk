@@ -10,8 +10,6 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        //You can put your client id here instead
-        resValue "string", "client_id", "5c7d19d51c947e7ed09bde22"
     }
     buildTypes {
         release {
@@ -27,10 +25,11 @@ android {
 }
 
 dependencies {
+    //Dependency for Mati
+    implementation("com.getmati:mati-sdk:3.0.3")
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    //Dependency for Mati
-    implementation 'com.matilock:mati-global-id-sdk:3.0.0'
 }
