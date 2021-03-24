@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.matilock.mati_kyc_sdk.MatiButton
+    <com.getmati.mati_sdk.MatiButton
         android:id="@+id/matiKYCButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

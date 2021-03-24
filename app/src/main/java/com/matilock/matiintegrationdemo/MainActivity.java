@@ -2,13 +2,12 @@ package com.matilock.matiintegrationdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import com.matilock.mati_kyc_sdk.MatiButton;
-import com.matilock.mati_kyc_sdk.Metadata;
-import com.matilock.mati_kyc_sdk.kyc.KYCActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.getmati.mati_sdk.MatiButton;
+import com.getmati.mati_sdk.Metadata;
+import com.getmati.mati_sdk.kyc.KYCActivity;
 
 public class MainActivity  extends AppCompatActivity {
 
