@@ -9,7 +9,7 @@ Ensure that your top-level build.gradle contains a reference to the following re
 
 Add this line into gradle dependencies
   
-    implementation 'com.getmati:mati-sdk:3.1.1'
+    implementation 'com.getmati:mati-sdk:3.1.2'
     
 Sync project with gradle files
     
