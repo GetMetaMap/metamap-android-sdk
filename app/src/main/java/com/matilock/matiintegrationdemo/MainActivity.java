@@ -2,13 +2,12 @@ package com.matilock.matiintegrationdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.getmati.mati_sdk.MatiButton;
 import com.getmati.mati_sdk.Metadata;
-import com.getmati.mati_sdk.kyc.KYCActivity;
+import com.getmati.mati_sdk.kyc.KYCActivityKt;
 
 
 public class MainActivity  extends AppCompatActivity {
@@ -30,7 +29,7 @@ public class MainActivity  extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == KYCActivity.REQUEST_CODE) {
+        if(requestCode == KYCActivityKt.REQUEST_CODE) {
             if(resultCode == RESULT_OK) {
               //  Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(KYCActivity.ARG_VERIFICATION_ID), Toast.LENGTH_LONG).show();
             } else {
