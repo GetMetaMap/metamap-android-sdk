@@ -7,6 +7,16 @@ Ensure that your top-level build.gradle contains a reference to the following re
 
 	 maven { url 'https://repo1.maven.org/maven2' }
 
+Enable Java 1.8 source compatibility if you haven't yet.
+
+	android {
+	    compileOptions {
+		sourceCompatibility = JavaVersion.VERSION_1_8
+		targetCompatibility = JavaVersion.VERSION_1_8
+	    }
+	}
+	
+
 Add this line into gradle dependencies
   
     implementation 'com.getmati:mati-sdk:3.1.2'
@@ -73,7 +83,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```Java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    if(requestCode == KYCActivity.REQUEST_CODE) {
+    if(requestCode == KYCActivityKt.REQUEST_CODE) {
         if(resultCode == RESULT_OK) {
             Toast.makeText( this,"SUCCESS!!!", Toast.LENGTH_LONG).show();
         } else {
@@ -88,7 +98,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ##### Kotlin
 ```Kotlin
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-    if (requestCode == KYCActivity.REQUEST_CODE) {
+    if (requestCode == KYCActivityKt.REQUEST_CODE) {
         if (resultCode == RESULT_OK) {
             Toast.makeText(this, "SUCCESS!!!", Toast.LENGTH_LONG).show()
         } else {
@@ -124,7 +134,7 @@ public class YourActivity extends AppCompatActivity implements MatiCallback {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == KYCActivity.REQUEST_CODE) {
+        if(requestCode == KYCActivityKt.REQUEST_CODE) {
             if(resultCode == RESULT_OK) {
                 Toast.makeText( this,"SUCCESS!!!", Toast.LENGTH_LONG).show();
             } else {
@@ -155,7 +165,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == KYCActivity.REQUEST_CODE) {
+        if (requestCode == KYCActivityKt.REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "SUCCESS!!!", Toast.LENGTH_LONG).show()
             } else {
