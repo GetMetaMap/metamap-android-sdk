@@ -19,7 +19,7 @@ Enable Java 1.8 source compatibility if you haven't yet.
 
 Add this line into gradle dependencies
   
-    implementation 'com.getmati:mati-sdk:3.2.0'
+    implementation 'com.getmati:mati-sdk:3.2.1'
     
 Sync project with gradle files
     
