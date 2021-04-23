@@ -2,12 +2,13 @@ package com.matilock.matiintegrationdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.getmati.mati_sdk.MatiButton;
+import com.getmati.mati_sdk.MatiSdk;
 import com.getmati.mati_sdk.Metadata;
-import com.getmati.mati_sdk.kyc.KYCActivityKt;
 
 
 public class MainActivity  extends AppCompatActivity {
@@ -29,15 +30,14 @@ public class MainActivity  extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == KYCActivityKt.REQUEST_CODE) {
+        if(requestCode == MatiSdk.REQUEST_CODE && data!=null) {
             if(resultCode == RESULT_OK) {
-              //  Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(KYCActivity.ARG_VERIFICATION_ID), Toast.LENGTH_LONG).show();
+                Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID), Toast.LENGTH_LONG).show();
             } else {
-               // Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(KYCActivity.ARG_VERIFICATION_ID), Toast.LENGTH_LONG).show();
+                Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID), Toast.LENGTH_LONG).show();
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-
 }

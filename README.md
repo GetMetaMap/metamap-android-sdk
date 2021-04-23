@@ -19,7 +19,7 @@ Enable Java 1.8 source compatibility if you haven't yet.
 
 Add this line into gradle dependencies
   
-    implementation 'com.getmati:mati-sdk:3.2.1'
+    implementation 'com.getmati:mati-sdk:3.3.0'
     
 Sync project with gradle files
     
@@ -83,7 +83,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```Java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    if(requestCode == KYCActivityKt.REQUEST_CODE) {
+    if(requestCode == MatiSdk.REQUEST_CODE) {
         if(resultCode == RESULT_OK) {
             Toast.makeText( this,"SUCCESS!!!", Toast.LENGTH_LONG).show();
         } else {
@@ -98,7 +98,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ##### Kotlin
 ```Kotlin
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-    if (requestCode == KYCActivityKt.REQUEST_CODE) {
+    if (requestCode == MatiSdk.REQUEST_CODE) {
         if (resultCode == RESULT_OK) {
             Toast.makeText(this, "SUCCESS!!!", Toast.LENGTH_LONG).show()
         } else {
@@ -134,7 +134,7 @@ public class YourActivity extends AppCompatActivity implements MatiCallback {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == KYCActivityKt.REQUEST_CODE) {
+        if(requestCode == MatiSdk.REQUEST_CODE) {
             if(resultCode == RESULT_OK) {
                 Toast.makeText( this,"SUCCESS!!!", Toast.LENGTH_LONG).show();
             } else {
@@ -165,7 +165,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == KYCActivityKt.REQUEST_CODE) {
+        if (requestCode == MatiSdk.REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "SUCCESS!!!", Toast.LENGTH_LONG).show()
             } else {
