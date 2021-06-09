@@ -179,11 +179,32 @@ class SecondActivity : AppCompatActivity() {
     }
 }
 ```
+## SPECIFIC PARAMETERS
 
+You can use metadata to set specific parameters
+
+##### Fixed selected language and hiding the language selection. (to make it permanent)
+
+key: fixedLanguage
+value: locale code of language
+
+###### example
+
+for Spain (it can be any country, if we doesnt support language yet it will be setted to English)
+
+##### fixedLanguage: es
+
+###### full example
+```kotlin
+Metadata.Builder()
+                .with("fixedLanguage", "es")
+                .build())
+```
     
 ### Requirements 
    
 Our SDK requires Android v5.0 (API v21) or above.
 
    For Mati SDK below 3.x.x please use this documentation https://github.com/GetMati/mati-android-sdk/blob/master/README_old__2_x_x_.md
+
 
