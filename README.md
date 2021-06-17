@@ -19,7 +19,7 @@ Enable Java 1.8 source compatibility if you haven't yet.
 
 Add this line into gradle dependencies
   
-    implementation ('com.getmati:mati-sdk:3.4.2'){
+    implementation ('com.getmati:mati-sdk:3.4.3'){
         exclude group: 'org.json', module: 'json'
     }
     
