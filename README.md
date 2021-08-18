@@ -225,3 +225,10 @@ Metadata.Builder()
                 .with("fixedLanguage", "es")
                 .build())
 ```
+
+**Java**
+```java
+new Metadata.Builder()
+                .with("fixedLanguage", "es")
+                .build());
+```
