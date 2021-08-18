@@ -64,7 +64,7 @@ _**Note**_ The following dependency will be automatically installed with Mati li
     |---------------|----------------------|----------|
     | `CLIENT_ID`   | @NonNull String      | Required |
     | `FLOW_ID`     | @Nullable String     | Required |
-    | `BUTTON_TITLE`| @NonNull String      | Optional |
+    | `BUTTON_TITLE`| @Nullable String      | Optional |
     | `METADATA` <br /> _**Note**_ Go to the [Metadata section](#metadata-usage) to learn more about using metadata   | @Nullable Metadata   | Optional |
 
 
