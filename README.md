@@ -5,9 +5,6 @@
 
 Mati Android SDK versions > 3.x.x requires Android v5.0 (API v21) or above.
 
-_**Note**_ For Mati SDK &lt; 3.x.x please follow the instructions in https://github.com/GetMati/mati-android-sdk/blob/master/README_old__2_x_x_.md
-
-
 ### Install the Mati Android SDK
 
 To install the Mati Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
