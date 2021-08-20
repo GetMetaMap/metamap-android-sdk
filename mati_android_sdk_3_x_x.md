@@ -216,6 +216,14 @@ value: locale code of language
 
 To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es" `
 
+**Java**
+
+```java
+new Metadata.Builder()
+                .with("fixedLanguage", "es")
+                .build());
+```
+
 **Kotlin**
 ```kotlin
 Metadata.Builder()
