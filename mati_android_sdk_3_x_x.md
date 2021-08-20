@@ -1,15 +1,11 @@
-# Mati Android SDK Usage Guides
+# Mati Android SDK Usage Guide &gt; 3.x.x
 
-The Mati Android SDK usage guide can be found in the following location:
-
-
-* [Mati Android SDK version &gt; 3.x.x](mati_android_sdk_3_x_x.md)
 
 ## Requirements
 
 Mati Android SDK versions > 3.x.x requires Android v5.0 (API v21) or above.
 
-### Install the Mati Android SDK
+## Install the Mati Android SDK
 
 To install the Mati Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
 
@@ -55,7 +51,7 @@ _**Note**_ The following dependency will be automatically installed with Mati li
 
 1. Add the MatiButton to your layout
 
-    ```xml    
+    ```xml
     <com.getmati.mati_sdk.MatiButton
             android:id="@+id/matiKYCButton"
             android:layout_width="match_parent"
@@ -68,7 +64,7 @@ _**Note**_ The following dependency will be automatically installed with Mati li
     |---------------|----------------------|----------|
     | `CLIENT_ID`   | @NonNull String      | Required |
     | `FLOW_ID`     | @Nullable String     | Required |
-    | `BUTTON_TITLE`| @Nullable String      | Optional |
+    | `BUTTON_TITLE`| @NonNull String      | Optional |
     | `METADATA` <br /> _**Note**_ Go to the [Metadata section](#metadata-usage) to learn more about using metadata   | @Nullable Metadata   | Optional |
 
 
@@ -220,16 +216,17 @@ value: locale code of language
 
 To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es" `
 
+**Java**
+
+```java
+new Metadata.Builder()
+                .with("fixedLanguage", "es")
+                .build());
+```
+
 **Kotlin**
 ```kotlin
 Metadata.Builder()
                 .with("fixedLanguage", "es")
                 .build())
-```
-
-**Java**
-```java
-new Metadata.Builder()
-                .with("fixedLanguage", "es")
-                .build());
 ```
