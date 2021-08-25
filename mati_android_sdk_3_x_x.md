@@ -1,3 +1,11 @@
+---
+title: "Android SDKs"
+excerpt: "Add the Mati button to your Android app."
+slug: "mobile-sdks"
+category: 61141a8437375100442f3d20
+---
+
+
 # Mati Android SDK Usage Guide &gt; 3.x.x
 
 
