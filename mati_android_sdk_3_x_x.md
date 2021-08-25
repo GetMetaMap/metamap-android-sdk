@@ -19,7 +19,7 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 - Ensure that your top-level `build.gradle` references to the following repository:
 	```
-	 maven { url 'https://repo1.maven.org/maven2' }
+	maven { url 'https://repo1.maven.org/maven2' }
 	```
 
 - Enable Java 1.8 source compatibility.
@@ -36,17 +36,17 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 - Add the following line to the list of gradle dependencies for your version of the Mati Android SDK:
 
 	```
-    implementation ('com.getmati:mati-sdk: <your Mati SDK version number>'){
-        exclude group: 'org.json', module: 'json'
-    }
+	implementation ('com.getmati:mati-sdk: <your Mati SDK version number>'){
+		exclude group: 'org.json', module: 'json'
+	}
 	```
 
 	For example, if you are using the Mati Android SDK version 3.8.0, you would include the following line:
 
 	```
-    implementation ('com.getmati:mati-sdk:3.8.0'){
-        exclude group: 'org.json', module: 'json'
-    }
+	implementation ('com.getmati:mati-sdk:3.8.0'){
+		exclude group: 'org.json', module: 'json'
+	}
 	```
 
 Then sync your project with the gradle files.
