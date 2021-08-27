@@ -1,17 +1,17 @@
----
+<!---
 title: "Android SDKs"
 excerpt: "Add the Mati button to your Android app."
 slug: "mobile-sdks"
 category: 61141a8437375100442f3d20
----
+--->
 
 
-# Mati Android SDK Usage Guide &gt; 3.x.x
+# Mati Android SDK Usage Guide
 
 
 ## Requirements
 
-Mati Android SDK versions > 3.x.x requires Android v5.0 (API v21) or above.
+Mati Android SDK versions &#8805;3.x.x requires Android v5.0 (API v21) or above.
 
 ## Install the Mati Android SDK
 

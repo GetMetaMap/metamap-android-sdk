@@ -1,8 +1,7 @@
-name: Sync mobile-sdks
+name: Sync android-sdk-user-guide
 on:
   push:
   branches:
-    - main
     - master
 jobs:
   build:
