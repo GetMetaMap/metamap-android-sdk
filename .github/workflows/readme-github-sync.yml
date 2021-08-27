@@ -1,0 +1,13 @@
+name: Sync android-sdk-user-guide
+on:
+  push:
+  branches:
+    - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout steps
+        uses: actions/checkout@v2.3.4
+      - name: Update Docs
+        run: npx rdme docs ./mati_android_sdk.md --key 	k8h4GtxV6YMfmgCxyY3HcxAksap0YtwC --version 1.0
