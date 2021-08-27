@@ -20,7 +20,8 @@ public class MainActivity  extends AppCompatActivity {
 
         MatiButton btn = findViewById(R.id.matiKYCButton);
 
-        btn.setParams("YOUR_CLIENT_ID",
+        btn.setParams(this,
+                "YOUR_CLIENT_ID",
                 "YOUR_FLOW_ID",
                 new Metadata.Builder()
                         .with("userId", "qwfguweo")

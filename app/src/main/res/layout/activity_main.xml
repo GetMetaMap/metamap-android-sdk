@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:gravity="center">
 
     <com.getmati.mati_sdk.MatiButton
         android:id="@+id/matiKYCButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:text="YOUR CUSTOM TEXT" />
+        app:color="@color/matiButtonColor"
+        app:text="YOUR CUSTOM TEXT"
+        app:textColor="@color/matiButtonTextColor" />
 
 </LinearLayout>
