@@ -1,5 +1,5 @@
 ---
-title: "Android SDKs"
+title: "Mati for Android"
 excerpt: "Add the Mati button to your Android app."
 slug: "mobile-sdks"
 category: 61141a8437375100442f3d20
