@@ -7,6 +7,12 @@ category: 61141a8437375100442f3d20
 
 # Mati for Android Usage Guide
 
+This is a guide to implement Mati in Android.
+
+## Android Demo App
+
+You can go to GitHub to download the [Mati Android Java demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/javaDemoApp(native)).
+
 
 ## Requirements
 
