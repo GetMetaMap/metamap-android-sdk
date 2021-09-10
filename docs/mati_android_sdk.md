@@ -1,12 +1,17 @@
-<!---
-title: "Android SDKs"
+---
+title: "Android"
 excerpt: "Add the Mati button to your Android app."
 slug: "mobile-sdks"
 category: 61141a8437375100442f3d20
---->
+---
 
+# Mati for Android Usage Guide
 
-# Mati Android SDK Usage Guide
+This is a guide to implement Mati in Android.
+
+## Android Demo App
+
+You can go to GitHub to download the [Mati Android Java demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/javaDemoApp(native)).
 
 
 ## Requirements
@@ -76,7 +81,9 @@ _**Note**_ The following dependency will be automatically installed with Mati li
 	|  `activity`   | @NonNull Activity      | Required |
 	|  `CLIENT_ID`   | @NonNull String      | Required |
 	|  `FLOW_ID`     | @Nullable String     | Required |
-	|  `METADATA` <br /> _**Note**_ Go to the [Metadata section](#metadata-usage) to learn more about using metadata   | @Nullable Metadata   | Optional |
+	|  `BUTTON_TITLE` | @NonNull String      | Optional |
+	|  `METADATA` <br /> _**Note**_ Go to the [Metadata section](#metadata-usage) <br />to learn more about using metadata   | @Nullable Metadata   | Optional |
+
 
 
 	**Java**
