@@ -58,7 +58,6 @@ Then sync your project with the gradle files.
 
 _**Note**_ The following dependencies will be automatically installed with Mati library:
 
-    `io.socket:socket.io-client:0.8.3`
     `androidx.appcompat:appcompat:1.3.1`
     `androidx.recyclerview:recyclerview:1.2.1`
     `androidx.constraintlayout:constraintlayout:2.0.4`
