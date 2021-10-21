@@ -23,13 +23,13 @@ Mati Android SDK versions &#8805;3.x.x requires Android v5.0 (API v21) or higher
 To install the Mati Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
 
 - Ensure that your top-level `build.gradle` references to the following repository:
-	```
+	```java
 	maven { url 'https://repo1.maven.org/maven2' }
 	```
 
 - Enable Java 1.8 source compatibility.
 
-	```
+	```java
 	android {
 	    compileOptions {
 		sourceCompatibility = JavaVersion.VERSION_1_8
@@ -40,7 +40,7 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 - Add the following line to the list of gradle dependencies for your version of the Mati Android SDK:
 
-	```
+	```java
 	implementation ('com.getmati:mati-sdk: <your Mati SDK version number>'){
 		exclude group: 'org.json', module: 'json'
 	}
@@ -48,7 +48,7 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 	For example, if you are using the Mati Android SDK version 3.11.1, you would include the following line:
 
-	```
+	```java
 	implementation ('com.getmati:mati-sdk:3.11.1'){
 		exclude group: 'org.json', module: 'json'
 	}
@@ -143,7 +143,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 	}
 	```
 
-1.  Listen for `KYCActivity` result
+1.  Listen for `KYCActivity` results
 
 	**Java**
 	```Java
@@ -247,7 +247,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 
 You can use metadata to set specific parameters, including setting a selected language and hiding the language selection to make it permanent.
 
-key: `fixedLanguage`
+key: `fixedLanguage` <br/>
 value: locale code of language
 
 ### Example: Set the Language Code for Spain
@@ -274,7 +274,7 @@ Metadata.Builder()
 
 
 
-In case you don't use MatiButton you can set primary buttons color and their text color with metadata
+In you don't use `MatiButton`, you can set the buttons' primary color and text color with metadata:
 
 key: `buttonColor`
 value: parsed color-int value
@@ -303,4 +303,4 @@ Metadata.Builder()
                 .build()
 ```
 
-But in case you use MatiButton, this values will be ignored and MatiButton's colors will be applied to all the screens.
+If you use `MatiButton`, this values will be ignored and MatiButton's colors will be applied to all the screens.
