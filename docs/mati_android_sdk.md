@@ -56,9 +56,30 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 Then sync your project with the gradle files.
 
-_**Note**_ The following dependency will be automatically installed with Mati library:
+_**Note**_ The following dependencies will be automatically installed with Mati library:
 
     `io.socket:socket.io-client:0.8.3`
+    `androidx.appcompat:appcompat:1.3.1`
+    `androidx.recyclerview:recyclerview:1.2.1`
+    `androidx.constraintlayout:constraintlayout:2.0.4`
+    `com.google.android.material:material:1.4.0`
+    `androidx.lifecycle:lifecycle-process:2.2.0`
+    `androidx.lifecycle:lifecycle-common-java8:2.2.0`
+    `com.google.code.gson:gson:2.8.5`
+    `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31`
+    `androidx.fragment:fragment-ktx:1.3.0`
+    `androidx.core:core-ktx:1.3.2`
+    `io.socket:socket.io-client:1.0.0`
+    `androidx.camera:camera-core:1.0.1`
+    `androidx.camera:camera-camera2:1.0.1`
+    `androidx.camera:camera-lifecycle:1.0.1`
+    `androidx.camera:camera-view:1.0.0-alpha27`
+    `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
+    `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
+    `androidx.navigation:navigation-fragment-ktx:2.3.3`
+    `androidx.navigation:navigation-ui-ktx:2.3.3`
+    `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
+    
 
 ## Usage
 
