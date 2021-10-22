@@ -274,7 +274,7 @@ Metadata.Builder()
 
 
 
-In you don't use `MatiButton`, you can set the buttons' primary color and text color with metadata:
+If you don't use `MatiButton`, you can set the buttons' primary color and text color with metadata:
 
 key: `buttonColor`
 value: parsed color-int value
