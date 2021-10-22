@@ -14,9 +14,11 @@ This is a guide to implement Mati in Android.
 You can go to GitHub to download the [Mati Android Java demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/javaDemoApp(native)).
 
 
-## Requirements
+## Requirements & size
 
 Mati Android SDK versions &#8805;3.x.x requires Android v5.0 (API v21) or higher.
+
+SDK size: ~2.5MB
 
 ## Install the Mati Android SDK
 
