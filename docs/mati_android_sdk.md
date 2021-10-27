@@ -16,7 +16,9 @@ You can go to GitHub to download the [Mati Android Java demo app](https://github
 
 ## Requirements & size
 
-Mati Android SDK versions &#8805;3.x.x requires Android v5.0 (API v21) or higher.
+Adroid: v5.0 (API v21) or higher.
+
+Kotlin: 1.4 or higher.
 
 SDK size: ~2.5MB
 
