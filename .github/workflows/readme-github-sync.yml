@@ -10,4 +10,4 @@ jobs:
       - name: Checkout steps
         uses: actions/checkout@v2.3.4
       - name: Update Docs
-        run: npx rdme docs ./docs --key 	k8h4GtxV6YMfmgCxyY3HcxAksap0YtwC --version 1.0
+        run: npx rdme docs ./docs --key 	k8h4GtxV6YMfmgCxyY3HcxAksap0YtwC --version 1.1
