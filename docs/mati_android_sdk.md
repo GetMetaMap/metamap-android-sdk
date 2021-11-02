@@ -74,10 +74,12 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
     `androidx.fragment:fragment-ktx:1.3.0`
     `androidx.core:core-ktx:1.3.2`
     `io.socket:socket.io-client:1.0.0`
-    `androidx.camera:camera-core:1.0.1`
-    `androidx.camera:camera-camera2:1.0.1`
-    `androidx.camera:camera-lifecycle:1.0.1`
-    `androidx.camera:camera-view:1.0.0-alpha27`
+    `androidx.camera:camera-core:1.1.0-alpha10`
+    `androidx.camera:camera-camera2:1.1.0-alpha10`
+    `androidx.camera:camera-lifecycle:1.1.0-alpha10`
+    `androidx.camera:camera-video:1.1.0-alpha10`
+    `androidx.camera:camera-view:1.0.0-alpha30`
+    `androidx.concurrent:concurrent-futures-ktx:1.1.0`
     `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
     `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
     `androidx.navigation:navigation-fragment-ktx:2.3.3`
