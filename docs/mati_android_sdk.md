@@ -51,10 +51,10 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 	}
 	```
 
-	For example, if you are using the Mati Android SDK version 3.11.1, you would include the following line:
+	For example, if you are using the Mati Android SDK version 3.11.2, you would include the following line:
 
 	```java
-	implementation ('com.getmati:mati-sdk:3.11.1'){
+	implementation ('com.getmati:mati-sdk:3.11.2'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
