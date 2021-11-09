@@ -6,10 +6,6 @@ category: 61141a8437375100442f3d20
 hidden: true
 ---
 
-# Mati for Android Usage Guide
-
-This is a guide to implement Mati in Android.
-
 ## Android Demo App
 
 You can go to GitHub to download the [Mati Android Java demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/javaDemoApp(native)).
@@ -28,6 +24,7 @@ SDK size: ~2.5MB
 To install the Mati Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
 
 - Ensure that your top-level `build.gradle` references to the following repository:
+
 	```java
 	maven { url 'https://repo1.maven.org/maven2' }
 	```
@@ -53,6 +50,7 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 	For example, if you are using the Mati Android SDK version 3.11.2, you would include the following line:
 
+
 	```java
 	implementation ('com.getmati:mati-sdk:3.11.2'){
 		exclude group: 'org.json', module: 'json'
@@ -61,7 +59,7 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 Then sync your project with the gradle files.
 
-_**Note**_ The following dependencies will be automatically installed with Mati library:
+_**Note**_ The following dependencies will be automatically installed with Mati library. The version numbers listed are subject to change:
 
     `androidx.appcompat:appcompat:1.3.1`
     `androidx.recyclerview:recyclerview:1.2.1`
@@ -87,6 +85,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
     `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
     
 
+
 ## Usage
 
 1. Add the MatiButton to your layout
@@ -101,6 +100,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 		app:textColor="@color/matiButtonTextColor"
 		app:text="YOUR CUSTOM TEXT" />
 	```
+
 1.  Call `setParams` with the following arguments to authorize the app and start verification:
 
 	| 	Parameter     | Type                 | Required |
@@ -149,6 +149,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 	        METADATA)
 	}
 	```
+
 
 1.  Listen for `KYCActivity` results
 
@@ -250,6 +251,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 	    }
 	}
 	```
+
 ## Metadata Usage
 
 You can use metadata to set specific parameters, including setting a selected language and hiding the language selection to make it permanent.
