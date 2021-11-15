@@ -48,11 +48,11 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 	}
 	```
 
-	For example, if you are using the Mati Android SDK version 3.11.2, you would include the following line:
+	For example, if you are using the Mati Android SDK version 3.11.3, you would include the following line:
 
 
 	```java
-	implementation ('com.getmati:mati-sdk:3.11.2'){
+	implementation ('com.getmati:mati-sdk:3.11.3'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
@@ -78,11 +78,13 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
     `androidx.camera:camera-video:1.1.0-alpha10`
     `androidx.camera:camera-view:1.0.0-alpha30`
     `androidx.concurrent:concurrent-futures-ktx:1.1.0`
+    `androidx.window:window:1.0.0-beta03`
     `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
     `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
     `androidx.navigation:navigation-fragment-ktx:2.3.3`
     `androidx.navigation:navigation-ui-ktx:2.3.3`
     `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
+    `io.coil-kt:coil:1.4.0`
     
 
 
