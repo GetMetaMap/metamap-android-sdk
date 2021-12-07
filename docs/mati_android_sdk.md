@@ -48,11 +48,11 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 	}
 	```
 
-	For example, if you are using the Mati Android SDK version 3.12.1, you would include the following line:
+	For example, if you are using the Mati Android SDK version 3.12.2, you would include the following line:
 
 
 	```java
-	implementation ('com.getmati:mati-sdk:3.12.1'){
+	implementation ('com.getmati:mati-sdk:3.12.2'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
@@ -85,6 +85,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
     `androidx.navigation:navigation-ui-ktx:2.3.3`
     `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
     `io.coil-kt:coil:1.4.0`
+    `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1`
     
 
 
@@ -315,3 +316,40 @@ Metadata.Builder()
 ```
 
 If you use `MatiButton`, this values will be ignored and MatiButton's colors will be applied to all the screens.
+
+
+### Proguard
+
+The SDK uses kotlinx.serialization library, so if you're using ProGuard you need to add rules to your `proguard-rules.pro` configuration to cover all classes that are serialized at runtime.
+
+The following configuration keeps serializers for _all_ serializable classes that are retained after shrinking.
+
+```proguard
+# Keep `Companion` object fields of serializable classes.
+# This avoids serializer lookup through `getDeclaredClasses` as done for named companion objects.
+-if @kotlinx.serialization.Serializable class **
+-keepclassmembers class <1> {
+    static <1>$Companion Companion;
+}
+
+# Keep `serializer()` on companion objects (both default and named) of serializable classes.
+-if @kotlinx.serialization.Serializable class ** {
+    static **$* *;
+}
+-keepclassmembers class <1>$<3> {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# Keep `INSTANCE.serializer()` of serializable objects.
+-if @kotlinx.serialization.Serializable class ** {
+    public static ** INSTANCE;
+}
+-keepclassmembers class <1> {
+    public static <1> INSTANCE;
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# @Serializable and @Polymorphic are used at runtime for polymorphic serialization.
+-keepattributes RuntimeVisibleAnnotations,AnnotationDefault
+
+```
