@@ -179,16 +179,16 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 	    if (requestCode == MatiSdk.REQUEST_CODE) {
 	        if (resultCode == Activity.RESULT_OK) {
-				Toast.makeText(
-					this, "SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-				).show()
-			} else {
-				Toast.makeText(
-					this, "CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-				).show()
-			}
+			Toast.makeText(
+				this, "SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
+						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
+			).show()
+		} else {
+			Toast.makeText(
+				this, "CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
+						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
+			).show()
+		}
 	    } else {
 	        super.onActivityResult(requestCode, resultCode, data)
 	    }
@@ -221,12 +221,12 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 	    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	        if(requestCode == MatiSdk.REQUEST_CODE) {
 	            if(resultCode == RESULT_OK) {
-					Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-				} else {
-					Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-				}
+				Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
+						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
+			} else {
+				Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
+						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
+			}
 	        } else {
 	            super.onActivityResult(requestCode, resultCode, data);
 	        }
@@ -254,16 +254,16 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 	    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 	        if (requestCode == MatiSdk.REQUEST_CODE) {
 	            if (resultCode == Activity.RESULT_OK) {
-					Toast.makeText(
-						this, "SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-								+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-					).show()
-				} else {
-					Toast.makeText(
-						this, "CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-								+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-					).show()
-				}
+				Toast.makeText(
+					this, "SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
+							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
+				).show()
+			} else {
+				Toast.makeText(
+					this, "CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
+							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
+				).show()
+			}
 	        } else {
 	            super.onActivityResult(requestCode, resultCode, data)
 	        }
