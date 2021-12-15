@@ -1,6 +1,6 @@
 ---
 title: "Android"
-excerpt: "Add the Mati button to your Android app."
+excerpt: "Add the Metamap button to your Android app."
 slug: "mobile-sdks"
 category: 61141a8437375100442f3d20
 hidden: true
@@ -8,7 +8,7 @@ hidden: true
 
 ## Android Demo App
 
-You can go to GitHub to download the [Mati Android Java demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/javaDemoApp(native)).
+You can go to GitHub to download the [Metamap Android Java demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/javaDemoApp(native)).
 
 
 ## Requirements & size
@@ -19,9 +19,9 @@ Kotlin: 1.4 or higher.
 
 SDK size: ~2.5MB
 
-## Install the Mati Android SDK
+## Install the Metamap Android SDK
 
-To install the Mati Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
+To install the Metamap Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
 
 - Ensure that your top-level `build.gradle` references to the following repository:
 
@@ -40,15 +40,15 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 	}
 	```
 
-- Add the following line to the list of gradle dependencies for your version of the Mati Android SDK:
+- Add the following line to the list of gradle dependencies for your version of the Metamap Android SDK:
 
 	```java
-	implementation ('com.getmati:mati-sdk: <your Mati SDK version number>'){
+	implementation ('com.getmati:mati-sdk: <your Metamap SDK version number>'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
 
-	For example, if you are using the Mati Android SDK version 3.12.3, you would include the following line:
+	For example, if you are using the Metamap Android SDK version 3.12.3, you would include the following line:
 
 
 	```java
@@ -59,7 +59,7 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 Then sync your project with the gradle files.
 
-_**Note**_ The following dependencies will be automatically installed with Mati library. The version numbers listed are subject to change:
+_**Note**_ The following dependencies will be automatically installed with Metamap library. The version numbers listed are subject to change:
 
     `androidx.appcompat:appcompat:1.3.1`
     `androidx.recyclerview:recyclerview:1.2.1`
@@ -86,12 +86,12 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
     `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
     `io.coil-kt:coil:1.4.0`
     `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1`
-    
+
 
 
 ## Usage
 
-1. Add the MatiButton to your layout
+1. Add the Metamap Button to your layout
 
 	```xml
 	<com.getmati.mati_sdk.MatiButton
@@ -127,7 +127,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 
 	    ...
 
-	    this.<MatiButton>findViewById(R.id.matiKYCButton).setParams(
+	    this.<MetamapButton>findViewById(R.id.matiKYCButton).setParams(
 	        this,
 	        "CLIENT_ID",
 	        "FLOW_ID",
@@ -145,7 +145,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 
 	    ...
 
-	    findViewById<MatiButton>(R.id.matiKYCButton).setParams(
+	    findViewById<MetamapButton>(R.id.matiKYCButton).setParams(
 	    	this,
 	        "CLIENT_ID",
 	        "FLOW_ID",
@@ -207,7 +207,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 
 	        setContentView(R.layout.activity_main);
 
-	        this.<MatiButton>findViewById(R.id.matiKYCButton).setParams(
+	        this.<MetamapButton>findViewById(R.id.matiKYCButton).setParams(
 		    this,
 	            "CLIENT_ID",
 	            "FLOW_ID",
@@ -241,7 +241,7 @@ _**Note**_ The following dependencies will be automatically installed with Mati 
 	        super.onCreate(savedInstanceState)
 	        setContentView(R.layout.activity_second)
 
-	        findViewById<MatiButton>(R.id.matiKYCButton).setParams(
+	        findViewById<MetamapButton>(R.id.matiKYCButton).setParams(
 		    this,
 	            "CLIENT_ID",
 	            "FLOW_ID",
@@ -280,7 +280,7 @@ value: locale code of language
 
 ### Example: Set the Language Code for Spain
 
-To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es" `
+To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es`
 
 **Java**
 
@@ -334,13 +334,13 @@ Metadata.Builder()
 If you use `MatiButton`, this values will be ignored and MatiButton's colors will be applied to all the screens.
 
 
-### Proguard
+## Proguard
 
-The SDK uses kotlinx.serialization library, so if you're using ProGuard you need to add rules to your `proguard-rules.pro` configuration to cover all classes that are serialized at runtime.
+The SDK uses the `kotlinx.serialization` library, so if you're using ProGuard you need to add rules to your `proguard-rules.pro` configuration to cover all classes that are serialized at runtime.
 
 The following configuration keeps serializers for _all_ serializable classes that are retained after shrinking.
 
-```proguard
+```java
 # Keep `Companion` object fields of serializable classes.
 # This avoids serializer lookup through `getDeclaredClasses` as done for named companion objects.
 -if @kotlinx.serialization.Serializable class **
