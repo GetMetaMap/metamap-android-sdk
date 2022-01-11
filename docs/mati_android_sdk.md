@@ -2,8 +2,7 @@
 title: "Android"
 excerpt: "Add the Mati button to your Android app."
 slug: "android"
-category: 61141a8437375100442f3d20
-hidden: true
+category: 61ae8e8dba577a0010791480
 ---
 
 ## Android Demo App
