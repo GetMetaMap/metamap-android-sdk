@@ -2,13 +2,13 @@
 title: "Android"
 excerpt: "Add the Mati button to your Android app."
 slug: "android"
-category: 61141a8437375100442f3d20
+category: 61ae8e8dba577a0010791480
 hidden: true
 ---
 
 ## Android Demo App
 
-You can go to GitHub to download the [Mati Android Java demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/javaDemoApp(native)).
+You can go to GitHub to download the [MetaMap Android Java demo app](https://github.com/GetMetaMap/mati-mobile-examples/tree/main/javaDemoApp(native)).
 
 
 ## Requirements & size
@@ -19,9 +19,9 @@ Kotlin: 1.4 or higher.
 
 SDK size: ~2.5MB
 
-## Install the Mati Android SDK
+## Install the MetaMap Android SDK
 
-To install the Mati Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
+To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will need to do the following:
 
 - Ensure that your top-level `build.gradle` references to the following repository:
 
@@ -43,12 +43,12 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 - Add the following line to the list of gradle dependencies for your version of the Mati Android SDK:
 
 	```java
-	implementation ('com.getmati:mati-sdk: <your Mati SDK version number>'){
+	implementation ('com.getmati:mati-sdk: <your MetaMap SDK version number>'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
 
-	For example, if you are using the Mati Android SDK version 3.12.4, you would include the following line:
+	For example, if you are using the MetaMap Android SDK version 3.12.4, you would include the following line:
 
 
 	```java
@@ -59,7 +59,7 @@ To install the Mati Android SDK using [Gradle](https://gradle.org/), you will ne
 
 Then sync your project with the gradle files.
 
-_**Note**_ The following dependencies will be automatically installed with Mati library. The version numbers listed are subject to change:
+_**Note**_ The following dependencies will be automatically installed with MetaMap library. The version numbers listed are subject to change:
 
     `androidx.appcompat:appcompat:1.3.1`
     `androidx.recyclerview:recyclerview:1.2.1`
