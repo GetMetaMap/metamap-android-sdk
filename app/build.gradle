@@ -48,7 +48,7 @@ repositories{
 
 dependencies {
     //Dependency for Mati
-    implementation ('com.getmati:mati-sdk:3.12.4'){
+    implementation ('com.getmati:mati-sdk:3.13.0'){
         exclude group: 'org.json', module: 'json'
     }
 
