@@ -48,11 +48,11 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 	}
 	```
 
-	For example, if you are using the MetaMap Android SDK version 3.13.0, you would include the following line:
+	For example, if you are using the MetaMap Android SDK version 3.14.0, you would include the following line:
 
 
 	```java
-	implementation ('com.getmati:mati-sdk:3.13.0'){
+	implementation ('com.getmati:mati-sdk:3.14.0'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
