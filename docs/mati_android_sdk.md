@@ -13,7 +13,11 @@ You can go to GitHub to download the [MetaMap Android Java demo app](https://git
 
 ## Requirements & size
 
-Android: v5.0 (API v21) or higher.
+OS Android version: v5.0 (API v21) or higher.
+
+compileSdkVersion: 31
+
+targetSdkVersion: 31
 
 Kotlin: 1.4 or higher.
 
