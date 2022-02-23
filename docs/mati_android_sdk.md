@@ -1,6 +1,6 @@
 ---
 title: "Android"
-excerpt: "Add the Mati button to your Android app."
+excerpt: "Add the Metamap button to your Android app."
 slug: "android"
 category: 61ae8e8dba577a0010791480
 hidden: true
@@ -19,7 +19,7 @@ compileSdkVersion: 31
 
 targetSdkVersion: 31
 
-Kotlin: 1.4 or higher.
+Kotlin: 1.5.21 or higher.
 
 SDK size: ~2.5MB
 
@@ -29,13 +29,13 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 
 - Ensure that your top-level `build.gradle` references to the following repository:
 
-	```java
-	maven { url 'https://repo1.maven.org/maven2' }
+	```
+	mavenCentral()
 	```
 
 - Enable Java 1.8 source compatibility.
 
-	```java
+	```
 	android {
 	    compileOptions {
 		sourceCompatibility = JavaVersion.VERSION_1_8
@@ -44,19 +44,19 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 	}
 	```
 
-- Add the following line to the list of gradle dependencies for your version of the Mati Android SDK:
+- Add the following to your app level gradle dependencies using your version of the Metamap Android SDK:
 
-	```java
-	implementation ('com.getmati:mati-sdk: <your MetaMap SDK version number>'){
+	```
+	implementation ('com.metamap:android-sdk: <your Metamap SDK version number>'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
 
-	For example, if you are using the MetaMap Android SDK version 3.14.0, you would include the following line:
+	For example, if you are using the Metamap Android SDK version 3.15.0, you would include the following:
 
 
-	```java
-	implementation ('com.getmati:mati-sdk:3.14.0'){
+	```
+	implementation ('com.metamap:android-sdk:3.15.0'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
@@ -67,48 +67,48 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
     `androidx.appcompat:appcompat:1.3.1`
     `androidx.recyclerview:recyclerview:1.2.1`
-    `androidx.constraintlayout:constraintlayout:2.0.4`
-    `com.google.android.material:material:1.4.0`
+    `androidx.cardview:cardview:1.0.0`
+    `androidx.constraintlayout:constraintlayout:2.1.2`
     `androidx.lifecycle:lifecycle-process:2.2.0`
     `androidx.lifecycle:lifecycle-common-java8:2.2.0`
     `com.google.code.gson:gson:2.8.5`
-    `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31`
+    `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21`
     `androidx.fragment:fragment-ktx:1.3.0`
-    `androidx.core:core-ktx:1.3.2`
+    `androidx.core:core-ktx:1.7.0`
     `io.socket:socket.io-client:1.0.0`
-    `androidx.camera:camera-core:1.1.0-alpha10`
-    `androidx.camera:camera-camera2:1.1.0-alpha10`
-    `androidx.camera:camera-lifecycle:1.1.0-alpha10`
-    `androidx.camera:camera-video:1.1.0-alpha10`
-    `androidx.camera:camera-view:1.0.0-alpha30`
+    `androidx.camera:camera-core:1.1.0-beta01`
+    `androidx.camera:camera-camera2:1.1.0-beta01`
+    `androidx.camera:camera-lifecycle:1.1.0-beta01`
+    `androidx.camera:camera-video:1.1.0-beta01`
+    `androidx.camera:camera-view:1.1.0-beta01`
     `androidx.concurrent:concurrent-futures-ktx:1.1.0`
-    `androidx.window:window:1.0.0-beta03`
+    `androidx.window:window:1.0.0`
     `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
     `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
     `androidx.navigation:navigation-fragment-ktx:2.3.3`
     `androidx.navigation:navigation-ui-ktx:2.3.3`
     `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
     `io.coil-kt:coil:1.4.0`
-    `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1`
+    `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
     `io.insert-koin:koin-core:3.1.4`
     `io.insert-koin:koin-android:3.1.4`
 	`io.ktor:ktor-client-android:1.5.2`
     `io.ktor:ktor-client-serialization:1.5.2`
     `io.ktor:ktor-client-logging-jvm:1.5.2`
-
+    `com.github.mhiew:android-pdf-viewer:3.2.0-beta.1`
 
 ## Usage
 
-1. Add the MatiButton to your layout
+1. Add the MetamapButton to your layout
 
 	```xml
-	<com.getmati.mati_sdk.MatiButton
-		android:id="@+id/matiKYCButton"
+	<com.metamap.metamap_sdk.MetamapButton
+		android:id="@+id/metamapButton"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_margin="16dp"
-		app:color="@color/matiButtonColor"
-		app:textColor="@color/matiButtonTextColor"
+		app:color="@color/metamapButtonColor"
+		app:textColor="@color/metamapButtonTextColor"
 		app:text="YOUR CUSTOM TEXT" />
 	```
 
@@ -116,6 +116,7 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 	| 	Parameter     | Type                 | Required |
 	|---------------|----------------------|----------|
+	|  `activityResultLauncher`   | @NonNull ActivityResultLauncher<Intent>      | Required |
 	|  `activity`   | @NonNull Activity      | Required |
 	|  `CLIENT_ID`   | @NonNull String      | Required |
 	|  `FLOW_ID`     | @Nullable String     | Required |
@@ -135,7 +136,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 	    ...
 
-	    this.<MatiButton>findViewById(R.id.matiKYCButton).setParams(
+	    this.<MetamapButton>findViewById(R.id.metamapButton).setParams(
+	        activityResultLauncher,
 	        this,
 	        "CLIENT_ID",
 	        "FLOW_ID",
@@ -153,7 +155,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 	    ...
 
-	    findViewById<MatiButton>(R.id.matiKYCButton).setParams(
+	    findViewById<MetamapButton>(R.id.metamapButton).setParams(
+	    	activityResultLauncher,
 	    	this,
 	        "CLIENT_ID",
 	        "FLOW_ID",
@@ -162,45 +165,68 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	```
 
 
-1.  Listen for `KYCActivity` results
+1.  Listen for result
 
 	**Java**
 	```Java
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    if(requestCode == MatiSdk.REQUEST_CODE) {
-	        if(resultCode == RESULT_OK) {
-                Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-                        + " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-                        + " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-            }
-	    } else {
-	        super.onActivityResult(requestCode, resultCode, data);
-	    }
-	}
+	ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    Intent data = result.getData();
+                    if (data == null) {
+                        Toast.makeText(MainActivity.this, "Verification cancelled", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        // There are no request codes
+                        Toast.makeText(
+                                MainActivity.this,
+                                "Verification success! " +
+                                        "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                        "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    } else {
+                        Toast.makeText(
+                                MainActivity.this,
+                                "Verification cancelled! " +
+                                        "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                        "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    }
+                });
 	```
 
 	**Kotlin**
 	```Kotlin
-	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-	    if (requestCode == MatiSdk.REQUEST_CODE) {
-	        if (resultCode == Activity.RESULT_OK) {
-			Toast.makeText(
-				this, "SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-			).show()
-		} else {
-			Toast.makeText(
-				this, "CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-			).show()
-		}
-	    } else {
-	        super.onActivityResult(requestCode, resultCode, data)
-	    }
-	}
+	private val activityResultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                val data = result.data
+                if (data == null) {
+                    Toast.makeText(requireContext(), "Verification cancelled", Toast.LENGTH_SHORT)
+                        .show()
+                    return@registerForActivityResult
+                }
+                if (result.resultCode == Activity.RESULT_OK) {
+                    // There are no request codes
+                    Toast.makeText(
+                        requireContext(),
+                        "Verification success! " +
+                                "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Verification cancelled! " +
+                                "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
 	```
 
  1. Check for your activity
@@ -215,7 +241,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 	        setContentView(R.layout.activity_main);
 
-	        this.<MatiButton>findViewById(R.id.matiKYCButton).setParams(
+	        this.<MatiButton>findViewById(R.id.metamapButton).setParams(
+	        activityResultLauncher,
 		    this,
 	            "CLIENT_ID",
 	            "FLOW_ID",
@@ -225,20 +252,33 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	                .build());
 	    }
 
-	    @Override
-	    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	        if(requestCode == MatiSdk.REQUEST_CODE) {
-	            if(resultCode == RESULT_OK) {
-				Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-			} else {
-				Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-						+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-			}
-	        } else {
-	            super.onActivityResult(requestCode, resultCode, data);
-	        }
-	    }
+	    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+                        new ActivityResultContracts.StartActivityForResult(),
+                        result -> {
+                            Intent data = result.getData();
+                            if (data == null) {
+                                Toast.makeText(MainActivity.this, "Verification cancelled", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            if (result.getResultCode() == Activity.RESULT_OK) {
+                                // There are no request codes
+                                Toast.makeText(
+                                        MainActivity.this,
+                                        "Verification success! " +
+                                                "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                                "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                                        Toast.LENGTH_SHORT
+                                ).show();
+                            } else {
+                                Toast.makeText(
+                                        MainActivity.this,
+                                        "Verification cancelled! " +
+                                                "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                                "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                                        Toast.LENGTH_SHORT
+                                ).show();
+                            }
+                        });
 	}
 	```
 
@@ -249,7 +289,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	        super.onCreate(savedInstanceState)
 	        setContentView(R.layout.activity_second)
 
-	        findViewById<MatiButton>(R.id.matiKYCButton).setParams(
+	        findViewById<MetamapButton>(R.id.metamapButton).setParams(
+	        activityResultLauncher,
 		    this,
 	            "CLIENT_ID",
 	            "FLOW_ID",
@@ -259,23 +300,33 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	                .build())
 	    }
 
-	    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-	        if (requestCode == MatiSdk.REQUEST_CODE) {
-	            if (resultCode == Activity.RESULT_OK) {
-				Toast.makeText(
-					this, "SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-				).show()
-			} else {
-				Toast.makeText(
-					this, "CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-							+ " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG
-				).show()
-			}
-	        } else {
-	            super.onActivityResult(requestCode, resultCode, data)
-	        }
-	    }
+	    private val activityResultLauncher =
+                    registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                        val data = result.data
+                        if (data == null) {
+                            Toast.makeText(requireContext(), "Verification cancelled", Toast.LENGTH_SHORT)
+                                .show()
+                            return@registerForActivityResult
+                        }
+                        if (result.resultCode == Activity.RESULT_OK) {
+                            // There are no request codes
+                            Toast.makeText(
+                                requireContext(),
+                                "Verification success! " +
+                                        "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                        "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            Toast.makeText(
+                                requireContext(),
+                                "Verification cancelled! " +
+                                        "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                        "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
 	}
 	```
 
@@ -310,7 +361,7 @@ Metadata.Builder()
 
 
 
-If you don't use `MatiButton`, you can set the buttons' primary color and text color with metadata:
+If you don't use `MetamapButton`, you can set the buttons' primary color and text color with metadata:
 
 key: `buttonColor`
 value: parsed color-int value
@@ -339,7 +390,7 @@ Metadata.Builder()
                 .build()
 ```
 
-If you use `MatiButton`, this values will be ignored and MatiButton's colors will be applied to all the screens.
+If you use `MetamapButton`, this values will be ignored and MetamapButton's colors will be applied to all the screens.
 
 
 ```

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <com.getmati.mati_sdk.MatiButton
+    <com.metamap.metamap_sdk.MetamapButton
         android:id="@+id/matiKYCButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

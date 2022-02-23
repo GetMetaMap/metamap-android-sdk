@@ -1,26 +1,30 @@
 package com.matilock.matiintegrationdemo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.getmati.mati_sdk.MatiButton;
-import com.getmati.mati_sdk.MatiSdk;
-import com.getmati.mati_sdk.Metadata;
+import com.metamap.metamap_sdk.Metadata;
+import com.metamap.metamap_sdk.MetamapButton;
+import com.metamap.metamap_sdk.MetamapSdk;
 
 
-public class MainActivity  extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MatiButton btn = findViewById(R.id.matiKYCButton);
+        MetamapButton btn = findViewById(R.id.matiKYCButton);
 
-        btn.setParams(this,
+        btn.setParams(resultLauncher,
+                this,
                 "YOUR_CLIENT_ID",
                 "YOUR_FLOW_ID",
                 new Metadata.Builder()
@@ -29,18 +33,31 @@ public class MainActivity  extends AppCompatActivity {
                         .build());
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == MatiSdk.REQUEST_CODE && data!=null) {
-            if(resultCode == RESULT_OK) {
-                Toast.makeText( this,"SUCCESS | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-                        + " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText( this,"CANCELLED | VerificationId: " + data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)
-                        + " IdentityId: " + data.getStringExtra(MatiSdk.ARG_IDENTITY_ID), Toast.LENGTH_LONG).show();
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
+    ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                Intent data = result.getData();
+                if (data == null) {
+                    Toast.makeText(MainActivity.this, "Verification cancelled", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    // There are no request codes
+                    Toast.makeText(
+                            MainActivity.this,
+                            "Verification success! " +
+                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                            Toast.LENGTH_SHORT
+                    ).show();
+                } else {
+                    Toast.makeText(
+                            MainActivity.this,
+                            "Verification cancelled! " +
+                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                            Toast.LENGTH_SHORT
+                    ).show();
+                }
+            });
 }
