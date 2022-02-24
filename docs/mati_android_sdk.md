@@ -3,7 +3,6 @@ title: "Android"
 excerpt: "Add the Metamap button to your Android app."
 slug: "android"
 category: 61ae8e8dba577a0010791480
-hidden: true
 ---
 
 ## Android Demo App
@@ -11,17 +10,12 @@ hidden: true
 You can go to GitHub to download the [MetaMap Android Java demo app](https://github.com/GetMetaMap/mati-mobile-examples/tree/main/javaDemoApp(native)).
 
 
-## Requirements & size
-
-OS Android version: v5.0 (API v21) or higher.
-
-compileSdkVersion: 31
-
-targetSdkVersion: 31
-
-Kotlin: 1.5.21 or higher.
-
-SDK size: ~2.5MB
+## Requirements
+* &gt;2.5MB of disk space
+* Android OS version: v5.0 (API v21) or higher.
+* compileSdkVersion: 31
+* targetSdkVersion: 31
+* Kotlin: 1.5.21 or higher.
 
 ## Install the MetaMap Android SDK
 
@@ -44,15 +38,15 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 	}
 	```
 
-- Add the following to your app level gradle dependencies using your version of the Metamap Android SDK:
+- Add the following to your app-level gradle dependencies using your version of the MetaMap Android SDK:
 
 	```
-	implementation ('com.metamap:android-sdk: <your Metamap SDK version number>'){
+	implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
 
-	For example, if you are using the Metamap Android SDK version 3.15.0, you would include the following:
+	For example, if you are using the MetaMap Android SDK version 3.15.0, you would include the following:
 
 
 	```
@@ -65,37 +59,37 @@ Then sync your project with the gradle files.
 
 _**Note**_ The following dependencies will be automatically installed with MetaMap library. The version numbers listed are subject to change:
 
-    `androidx.appcompat:appcompat:1.3.1`
-    `androidx.recyclerview:recyclerview:1.2.1`
-    `androidx.cardview:cardview:1.0.0`
-    `androidx.constraintlayout:constraintlayout:2.1.2`
-    `androidx.lifecycle:lifecycle-process:2.2.0`
-    `androidx.lifecycle:lifecycle-common-java8:2.2.0`
-    `com.google.code.gson:gson:2.8.5`
-    `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21`
-    `androidx.fragment:fragment-ktx:1.3.0`
-    `androidx.core:core-ktx:1.7.0`
-    `io.socket:socket.io-client:1.0.0`
-    `androidx.camera:camera-core:1.1.0-beta01`
-    `androidx.camera:camera-camera2:1.1.0-beta01`
-    `androidx.camera:camera-lifecycle:1.1.0-beta01`
-    `androidx.camera:camera-video:1.1.0-beta01`
-    `androidx.camera:camera-view:1.1.0-beta01`
-    `androidx.concurrent:concurrent-futures-ktx:1.1.0`
-    `androidx.window:window:1.0.0`
-    `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
-    `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
-    `androidx.navigation:navigation-fragment-ktx:2.3.3`
-    `androidx.navigation:navigation-ui-ktx:2.3.3`
-    `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
-    `io.coil-kt:coil:1.4.0`
-    `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
-    `io.insert-koin:koin-core:3.1.4`
-    `io.insert-koin:koin-android:3.1.4`
-	`io.ktor:ktor-client-android:1.5.2`
-    `io.ktor:ktor-client-serialization:1.5.2`
-    `io.ktor:ktor-client-logging-jvm:1.5.2`
-    `com.github.mhiew:android-pdf-viewer:3.2.0-beta.1`
+* `androidx.appcompat:appcompat:1.3.1`
+* `androidx.recyclerview:recyclerview:1.2.1`
+* `androidx.cardview:cardview:1.0.0`
+* `androidx.constraintlayout:constraintlayout:2.1.2`
+* `androidx.lifecycle:lifecycle-process:2.2.0`
+* `androidx.lifecycle:lifecycle-common-java8:2.2.0`
+* `com.google.code.gson:gson:2.8.5`
+* `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21`
+* `androidx.fragment:fragment-ktx:1.3.0`
+* `androidx.core:core-ktx:1.7.0`
+* `io.socket:socket.io-client:1.0.0`
+* `androidx.camera:camera-core:1.1.0-beta01`
+* `androidx.camera:camera-camera2:1.1.0-beta01`
+* `androidx.camera:camera-lifecycle:1.1.0-beta01`
+* `androidx.camera:camera-video:1.1.0-beta01`
+* `androidx.camera:camera-view:1.1.0-beta01`
+* `androidx.concurrent:concurrent-futures-ktx:1.1.0`
+* `androidx.window:window:1.0.0`
+* `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
+* `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
+* `androidx.navigation:navigation-fragment-ktx:2.3.3`
+* `androidx.navigation:navigation-ui-ktx:2.3.3`
+* `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
+* `io.coil-kt:coil:1.4.0`
+* `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
+* `io.insert-koin:koin-core:3.1.4`
+* `io.insert-koin:koin-android:3.1.4`
+* `io.ktor:ktor-client-android:1.5.2`
+* `io.ktor:ktor-client-serialization:1.5.2`
+* `io.ktor:ktor-client-logging-jvm:1.5.2`
+* `com.github.mhiew:android-pdf-viewer:3.2.0-beta.1`
 
 ## Usage
 
@@ -165,7 +159,7 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	```
 
 
-1.  Listen for result
+1.  Listen for the result
 
 	**Java**
 	```Java
@@ -336,10 +330,12 @@ You can use metadata to set specific parameters, including setting a selected la
 
 key: `fixedLanguage` <br/>
 value: locale code of language
+	
+**_NOTE_: The language locale is the 2-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for the language's country of origin. For instance, Portuguese would use Portugal's code, `pt`.**
 
 ### Example: Set the Language Code for Spain
 
-To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es" `
+To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es`.
 
 **Java**
 
