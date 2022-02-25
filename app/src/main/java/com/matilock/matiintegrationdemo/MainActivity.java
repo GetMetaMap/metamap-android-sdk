@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MetamapButton btn = findViewById(R.id.matiKYCButton);
+        MetamapButton btn = findViewById(R.id.metamapButton);
 
         btn.setParams(
                 this,

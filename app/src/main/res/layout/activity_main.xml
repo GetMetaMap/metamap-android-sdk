@@ -6,12 +6,12 @@
     android:gravity="center">
 
     <com.metamap.metamap_sdk.MetamapButton
-        android:id="@+id/matiKYCButton"
+        android:id="@+id/metamapButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:color="@color/matiButtonColor"
+        app:color="@color/metamapiButtonColor"
         app:text="YOUR CUSTOM TEXT"
-        app:textColor="@color/matiButtonTextColor" />
+        app:textColor="@color/metamapButtonTextColor" />
 
 </LinearLayout>
