@@ -46,11 +46,11 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 	}
 	```
 
-	For example, if you are using the MetaMap Android SDK version 3.15.0, you would include the following:
+	For example, if you are using the MetaMap Android SDK version 3.16.0, you would include the following:
 
 
 	```
-	implementation ('com.metamap:android-sdk:3.15.0'){
+	implementation ('com.metamap:android-sdk:3.16.0'){
 		exclude group: 'org.json', module: 'json'
 	}
 	```
@@ -110,12 +110,13 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 	| 	Parameter     | Type                 | Required |
 	|---------------|----------------------|----------|
-	|  `activityResultLauncher`   | @NonNull ActivityResultLauncher<Intent>      | Required |
+	|  `activityResultLauncher`   | @NonNull ActivityResultLauncher<Intent>      | Optional |
 	|  `activity`   | @NonNull Activity      | Required |
 	|  `CLIENT_ID`   | @NonNull String      | Required |
 	|  `FLOW_ID`     | @Nullable String     | Required |
 	|  `BUTTON_TITLE` | @NonNull String      | Optional |
 	|  `METADATA` <br /> _**Note**_ Go to the [Metadata section](#metadata-usage) <br />to learn more about using metadata   | @Nullable Metadata   | Optional |
+	|  `requestCode`   | @NonNull Int      | Optional |
 
 
 
@@ -139,6 +140,28 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	}
 	```
 
+	or you can use onActivityResult
+
+	```
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+        ...
+
+        this.<MetamapButton>findViewById(R.id.metamapButton).setParams(
+            this,
+            "YOUR_CLIENT_ID",
+            "YOUR_FLOW_ID",
+            new Metadata.Builder()
+                    .with("userId", "qwfguweo")
+                    .with("type", 2)
+                    .build());
+    }
+	```
+
 	**Kotlin**
 
 	```kotlin
@@ -151,6 +174,24 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 	    findViewById<MetamapButton>(R.id.metamapButton).setParams(
 	    	activityResultLauncher,
+	    	this,
+	        "CLIENT_ID",
+	        "FLOW_ID",
+	        METADATA)
+	}
+	```
+
+    or you can use onActivityResult
+
+    ```
+	override fun onCreate(savedInstanceState: Bundle?) {
+	    super.onCreate(savedInstanceState)
+
+	    setContentView(R.layout.activity_main);
+
+	    ...
+
+	    findViewById<MetamapButton>(R.id.metamapButton).setParams(
 	    	this,
 	        "CLIENT_ID",
 	        "FLOW_ID",
@@ -192,6 +233,44 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                 });
 	```
 
+    or you can use onActivityResult
+
+	```
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == MetamapSdk.DEFAULT_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK && data != null) {
+                // There are no request codes
+                Toast.makeText(
+                        this,
+                        "onActivityResult Verification success! " +
+                                "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                        Toast.LENGTH_SHORT
+                ).show();
+            } else {
+                if (data != null) {
+                    Toast.makeText(
+                            this,
+                            "onActivityResult Verification cancelled! " +
+                                    "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                    "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                } else {
+                    Toast.makeText(
+                            this,
+                            "onActivityResult Verification cancelled!",
+                            Toast.LENGTH_SHORT
+                    ).show();
+                }
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+    ```
+
 	**Kotlin**
 	```Kotlin
 	private val activityResultLauncher =
@@ -221,6 +300,43 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                     ).show()
                 }
             }
+	```
+
+    or you can use onActivityResult
+
+	```
+     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            if (requestCode == MetamapSdk.DEFAULT_REQUEST_CODE) {
+                if (resultCode == Activity.RESULT_OK && data != null) {
+                    // There are no request codes
+                    Toast.makeText(
+                        this,
+                        "onActivityResult Verification success! " +
+                                "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    if (data != null) {
+                        Toast.makeText(
+                            this,
+                            "onActivityResult Verification cancelled! " +
+                                    "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                    "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "onActivityResult Verification cancelled!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            } else {
+                super.onActivityResult(requestCode, resultCode, data)
+            }
+        }
 	```
 
  1. Check for your activity
@@ -330,7 +446,7 @@ You can use metadata to set specific parameters, including setting a selected la
 
 key: `fixedLanguage` <br/>
 value: locale code of language
-	
+
 **_NOTE_: The language locale is the 2-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for the language's country of origin. For instance, Portuguese would use Portugal's code, `pt`.**
 
 ### Example: Set the Language Code for Spain

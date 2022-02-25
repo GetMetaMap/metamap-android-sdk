@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         MetamapButton btn = findViewById(R.id.matiKYCButton);
 
-        btn.setParams(resultLauncher,
+        btn.setParams(
                 this,
                 "YOUR_CLIENT_ID",
                 "YOUR_FLOW_ID",
@@ -31,33 +31,71 @@ public class MainActivity extends AppCompatActivity {
                         .with("userId", "qwfguweo")
                         .with("type", 2)
                         .build());
+
     }
 
-    ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                Intent data = result.getData();
-                if (data == null) {
-                    Toast.makeText(MainActivity.this, "Verification cancelled", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (result.getResultCode() == Activity.RESULT_OK) {
-                    // There are no request codes
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == MetamapSdk.DEFAULT_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK && data != null) {
+                // There are no request codes
+                Toast.makeText(
+                        this,
+                        "onActivityResult Verification success! " +
+                                "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                        Toast.LENGTH_SHORT
+                ).show();
+            } else {
+                if (data != null) {
                     Toast.makeText(
-                            MainActivity.this,
-                            "Verification success! " +
-                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
-                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                            this,
+                            "onActivityResult Verification cancelled! " +
+                                    "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
+                                    "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
                             Toast.LENGTH_SHORT
                     ).show();
                 } else {
                     Toast.makeText(
-                            MainActivity.this,
-                            "Verification cancelled! " +
-                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
-                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+                            this,
+                            "onActivityResult Verification cancelled!",
                             Toast.LENGTH_SHORT
                     ).show();
                 }
-            });
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    /*
+     * In case you want to use Activity Result API
+     */
+//    ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
+//            new ActivityResultContracts.StartActivityForResult(),
+//            result -> {
+//                Intent data = result.getData();
+//                if (data == null) {
+//                    Toast.makeText(MainActivity.this, "Verification cancelled", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                if (result.getResultCode() == Activity.RESULT_OK) {
+//                    // There are no request codes
+//                    Toast.makeText(
+//                            MainActivity.this,
+//                            "Verification success! " +
+//                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+//                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+//                            Toast.LENGTH_SHORT
+//                    ).show();
+//                } else {
+//                    Toast.makeText(
+//                            MainActivity.this,
+//                            "Verification cancelled! " +
+//                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+//                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
+//                            Toast.LENGTH_SHORT
+//                    ).show();
+//                }
+//            });
 }
