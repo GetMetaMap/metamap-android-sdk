@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.metamap.metamap_sdk.Metadata;
@@ -42,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(
                         this,
                         "onActivityResult Verification success! " +
-                                "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
-                                "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                                "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
                         Toast.LENGTH_SHORT
                 ).show();
             } else {
@@ -51,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(
                             this,
                             "onActivityResult Verification cancelled! " +
-                                    "VerificationId: ${data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID)}, " +
-                                    "IdentityId: ${data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID)}",
+                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
+                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
                             Toast.LENGTH_SHORT
                     ).show();
                 } else {
