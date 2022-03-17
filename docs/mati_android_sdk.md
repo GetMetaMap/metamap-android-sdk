@@ -23,37 +23,36 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 
 - Ensure that your top-level `build.gradle` references to the following repository:
 
-	```
-	mavenCentral()
-	```
+  ```
+  mavenCentral()
+  ```
 
 - Enable Java 1.8 source compatibility.
 
-	```
-	android {
-	    compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_1_8
-		targetCompatibility = JavaVersion.VERSION_1_8
-	    }
-	}
-	```
+  ```
+  android {
+    compileOptions {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+    }
+  }
+  ```
 
 - Add the following to your app-level gradle dependencies using your version of the MetaMap Android SDK:
 
-	```
-	implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>'){
-		exclude group: 'org.json', module: 'json'
-	}
-	```
+  ```
+  implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>'){
+	exclude group: 'org.json', module: 'json'
+  }
+  ```
 
-	For example, if you are using the MetaMap Android SDK version 3.19.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.19.0, you would include the following:
 
-
-	```
-	implementation ('com.metamap:android-sdk:3.19.0'){
-		exclude group: 'org.json', module: 'json'
-	}
-	```
+  ```
+  implementation ('com.metamap:android-sdk:3.19.0'){
+	exclude group: 'org.json', module: 'json'
+  }
+  ```
 
 Then sync your project with the gradle files.
 
@@ -95,35 +94,33 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 1. Add the MetamapButton to your layout
 
-	```xml
-	<com.metamap.metamap_sdk.MetamapButton
-		android:id="@+id/metamapButton"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="16dp"
-		app:color="@color/metamapButtonColor"
-		app:textColor="@color/metamapButtonTextColor"
-		app:text="YOUR CUSTOM TEXT" />
-	```
+    ```xml
+    <com.metamap.metamap_sdk.MetamapButton
+	android:id="@+id/metamapButton"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="16dp"
+	app:color="@color/metamapButtonColor"
+	app:textColor="@color/metamapButtonTextColor"
+	app:text="YOUR CUSTOM TEXT" />
+    ```
 
 1.  Call `setParams` with the following arguments to authorize the app and start verification:
 
-	| 	Parameter     | Type                 | Required |
-	|---------------|----------------------|----------|
-	|  `activityResultLauncher`   | @NonNull ActivityResultLauncher<Intent>      | Optional |
-	|  `activity`   | @NonNull Activity      | Required |
-	|  `CLIENT_ID`   | @NonNull String      | Required |
-	|  `FLOW_ID`     | @Nullable String     | Required |
-	|  `BUTTON_TITLE` | @NonNull String      | Optional |
-	|  `METADATA` <br /> _**Note**_ Go to the [Metadata section](#metadata-usage) <br />to learn more about using metadata   | @Nullable Metadata   | Optional |
-	|  `requestCode`   | @NonNull Int      | Optional |
+    | 	Parameter     | Type                 | Required |
+    |---------------|----------------------|----------|
+    |  `activityResultLauncher`   | @NonNull ActivityResultLauncher<Intent>      | Optional |
+    |  `activity`   | @NonNull Activity      | Required |
+    |  `CLIENT_ID`   | @NonNull String      | Required |
+    |  `FLOW_ID`     | @Nullable String     | Required |
+    |  `BUTTON_TITLE` | @NonNull String      | Optional |
+    |  `METADATA` <br /> _**Note**_ Go to the [Metadata section](#metadata-usage) <br />to learn more about using metadata   | @Nullable Metadata   | Optional |
+    |  `requestCode`   | @NonNull Int      | Optional |
 
+    **Java**
 
-
-	**Java**
-
-	```Java
-	@Override
+    ```java
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 
@@ -137,12 +134,12 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	        "CLIENT_ID",
 	        "FLOW_ID",
 	        METADATA);
-	}
-	```
+    }
+    ```
 
-	or you can use onActivityResult
+    or you can use onActivityResult
 
-	```
+    ```java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,11 +157,11 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                     .with("type", 2)
                     .build());
     }
-	```
+    ```
 
-	**Kotlin**
+    **Kotlin**
 
-	```kotlin
+    ```kotlin
 	override fun onCreate(savedInstanceState: Bundle?) {
 	    super.onCreate(savedInstanceState)
 
@@ -179,11 +176,11 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	        "FLOW_ID",
 	        METADATA)
 	}
-	```
+    ```
 
     or you can use onActivityResult
 
-    ```
+    ```kotlin
 	override fun onCreate(savedInstanceState: Bundle?) {
 	    super.onCreate(savedInstanceState)
 
@@ -197,13 +194,13 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	        "FLOW_ID",
 	        METADATA)
 	}
-	```
+    ```
 
 
 1.  Listen for the result
 
-	**Java**
-	```Java
+    **Java**
+    ```java
 	ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -231,11 +228,11 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                         ).show();
                     }
                 });
-	```
+    ```
 
     or you can use onActivityResult
 
-	```
+    ```java
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == MetamapSdk.DEFAULT_REQUEST_CODE) {
@@ -271,8 +268,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
     }
     ```
 
-	**Kotlin**
-	```Kotlin
+    **Kotlin**
+    ```kotlin
 	private val activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 val data = result.data
@@ -300,11 +297,11 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                     ).show()
                 }
             }
-	```
+    ```
 
     or you can use onActivityResult
 
-	```
+    ```kotlin
      override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
             if (requestCode == MetamapSdk.DEFAULT_REQUEST_CODE) {
                 if (resultCode == Activity.RESULT_OK && data != null) {
@@ -337,12 +334,12 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                 super.onActivityResult(requestCode, resultCode, data)
             }
         }
-	```
+    ```
 
  1. Check for your activity
 
-	**Java**
-	```java
+    **Java**
+    ```java
 	public class YourActivity extends AppCompatActivity implements MatiCallback {
 
 	    @Override
@@ -389,11 +386,11 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                                 ).show();
                             }
                         });
-	}
-	```
+    }
+    ```
 
-	**Kotlin**
-	```kotlin
+    **Kotlin**
+    ```kotlin
 	class SecondActivity : AppCompatActivity() {
 	    override fun onCreate(savedInstanceState: Bundle?) {
 	        super.onCreate(savedInstanceState)
@@ -437,8 +434,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
                             ).show()
                         }
                     }
-	}
-	```
+    }
+    ```
 
 ## Metadata Usage
 
@@ -502,7 +499,4 @@ Metadata.Builder()
                 .build()
 ```
 
-If you use `MetamapButton`, this values will be ignored and MetamapButton's colors will be applied to all the screens.
-
-
-```
+If you use `MetamapButton`, these values will be ignored and `MetamapButton`'s colors will be applied to all screens.
