@@ -46,10 +46,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   }
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.20.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.21.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.20.0'){
+  implementation ('com.metamap:android-sdk:3.21.0'){
 	exclude group: 'org.json', module: 'json'
   }
   ```
@@ -88,7 +88,6 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 * `io.ktor:ktor-client-android:1.5.2`
 * `io.ktor:ktor-client-serialization:1.5.2`
 * `io.ktor:ktor-client-logging-jvm:1.5.2`
-* `com.github.mhiew:android-pdf-viewer:3.2.0-beta.1`
 
 ## Usage
 
