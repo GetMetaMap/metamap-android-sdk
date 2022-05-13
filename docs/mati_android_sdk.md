@@ -46,10 +46,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   }
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.21.3, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.21.4, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.21.3'){
+  implementation ('com.metamap:android-sdk:3.21.4'){
 	exclude group: 'org.json', module: 'json'
   }
   ```
@@ -69,11 +69,11 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 * `androidx.fragment:fragment-ktx:1.3.0`
 * `androidx.core:core-ktx:1.7.0`
 * `io.socket:socket.io-client:1.0.0`
-* `androidx.camera:camera-core:1.1.0-beta03`
-* `androidx.camera:camera-camera2:1.1.0-beta03`
-* `androidx.camera:camera-lifecycle:1.1.0-beta03`
-* `androidx.camera:camera-video:1.1.0-beta03`
-* `androidx.camera:camera-view:1.1.0-beta03`
+* `androidx.camera:camera-core:1.1.0-rc01`
+* `androidx.camera:camera-camera2:1.1.0-rc01`
+* `androidx.camera:camera-lifecycle:1.1.0-rc01`
+* `androidx.camera:camera-video:1.1.0-rc01`
+* `androidx.camera:camera-view:1.1.0-rc01`
 * `androidx.concurrent:concurrent-futures-ktx:1.1.0`
 * `androidx.window:window:1.0.0`
 * `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
