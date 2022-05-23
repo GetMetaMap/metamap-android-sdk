@@ -8,6 +8,26 @@ hidden: true
 
 <!-- Note to developers: copy/paste the template below for each version. Delete categories that don't apply the the release
 
+## Version 3.21.6
+### Date 21 May 2022
+  
+### Bug Fixes
+* Face detector bugfix during selfie verification
+
+## Version 3.21.5
+### Date 18 May 2022
+
+### Updated Features
+* National Id documents are loaded dynamically
+
+### Bug Fixes
+* Minor improvements
+
+-->
+
+
+<!-- Note to developers: copy/paste the template below for each version. Delete categories that don't apply the the release
+
 ## Version <number>
 ### Date <yyyy-mm-dd>
   
