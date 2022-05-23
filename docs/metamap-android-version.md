@@ -6,7 +6,9 @@ category: 62619ae58ead3b001a81cc83
 hidden: true
 ---
 
+## Feedback
 
+If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
 ## Version 3.21.6
 ### Date 2022-05-21
