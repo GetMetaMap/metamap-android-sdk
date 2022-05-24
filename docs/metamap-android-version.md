@@ -2,7 +2,7 @@
 title: "Android Changelog"
 excerpt: "MetaMap's Android SDK Changelog"
 slug: "android-changelog"
-category: 62619ae58ead3b001a81cc83
+category: 61ae8e8dba577a0010791480
 hidden: true
 ---
 
