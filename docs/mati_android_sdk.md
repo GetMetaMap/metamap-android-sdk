@@ -46,10 +46,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   }
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.21.6, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.22.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.21.6'){
+  implementation ('com.metamap:android-sdk:3.22.0'){
 	exclude group: 'org.json', module: 'json'
   }
   ```
@@ -82,9 +82,10 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 * `androidx.navigation:navigation-ui-ktx:2.3.3`
 * `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
 * `io.coil-kt:coil:1.4.0`
+* `io.coil-kt:coil-svg:1.4.0`
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
-* `io.insert-koin:koin-core:3.1.4`
-* `io.insert-koin:koin-android:3.1.4`
+* `io.insert-koin:koin-core:3.1.5`
+* `io.insert-koin:koin-android:3.1.5`
 * `io.ktor:ktor-client-android:1.5.2`
 * `io.ktor:ktor-client-serialization:1.5.2`
 * `io.ktor:ktor-client-logging-jvm:1.5.2`
@@ -152,8 +153,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
             "YOUR_CLIENT_ID",
             "YOUR_FLOW_ID",
             new Metadata.Builder()
-                    .with("userId", "qwfguweo")
-                    .with("type", 2)
+                    .additionalData("userId", "qwfguweo")
+                    .additionalData("type", 2)
                     .build());
     }
     ```
@@ -353,8 +354,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	            "CLIENT_ID",
 	            "FLOW_ID",
 	            new Metadata.Builder()
-	                .with("key_1", "value1")
-	                .with("key2", 2)
+	                .additionalData("key_1", "value1")
+	                .additionalData("key2", 2)
 	                .build());
 	    }
 
@@ -401,8 +402,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	            "CLIENT_ID",
 	            "FLOW_ID",
 	            Metadata.Builder()
-	                .with("key_1", "value1")
-	                .with("key2", 2)
+	                .additionalData("key_1", "value1")
+	                .additionalData("key2", 2)
 	                .build())
 	    }
 
@@ -452,15 +453,21 @@ To set the language code for Spain to Spanish, we would set the `fixedLanguage` 
 **Java**
 
 ```java
+
+UIConfig uiConfig = new UIConfig(MetamapLanguage.ENGLISH);
+
 new Metadata.Builder()
-                .with("fixedLanguage", "es")
+                .uiConfig(uiConfig)
                 .build();
 ```
 
 **Kotlin**
 ```kotlin
+
+val uiConfig = UIConfig(fixedLanguage = MetamapLanguage.ENGLISH)
+
 Metadata.Builder()
-                .with("fixedLanguage", "es")
+                .uiConfig(uiConfig)
                 .build()
 ```
 
@@ -483,18 +490,29 @@ value: parsed color-int value
 **Java**
 
 ```java
+
+UIConfig uiConfig = new UIConfig(
+                        null,
+                        Color.parseColor("#EF0404"),
+                        Color.parseColor("#FFFFFF")
+                    );
+
 new Metadata.Builder()
-                .with("buttonColor", Color.parseColor("#FF0000"))
-	    	.with("buttonTextColor", Color.parseColor("#FFFFFF"))
+                .uiConfig(uiConfig)
                 .build();
 ```
 
 
 **Kotlin**
 ```kotlin
+
+val uiConfig = UIConfig(
+                    buttonColor = Color.parseColor("#EF0404"),
+                    buttonTextColor = Color.parseColor("#FFFFFF")
+                )
+
 Metadata.Builder()
-                .with("buttonColor", Color.parseColor("#FF0000"))
-	    	.with("buttonTextColor", Color.parseColor("#FFFFFF"))
+                .uiConfig(uiConfig)
                 .build()
 ```
 

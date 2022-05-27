@@ -10,6 +10,23 @@ hidden: true
 
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
+
+# Version 3.22.0
+###### 27 May 2022
+
+#### New Features
+* Location Intelligence step support added
+
+#### Updated Features
+* Metadata builder updated. Method `with` was marked as deprecated
+
+#### Bug Fixes
+* Icons for Bank, Payroll, Work Account Data and Custom Input products became visible on the first page
+* Fixed: the button on the first page didn’t work after language change
+* Custom Document hint text and icon overlap bug fixed
+
+
+
 # Version 3.21.6
 ###### 21 May 2022
   
