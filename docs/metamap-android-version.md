@@ -11,6 +11,17 @@ hidden: true
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
 
+# Version 3.22.1
+###### 03 June 2022
+
+#### Bug Fixes
+* Fixed `IllegalStateException` A recording is already in progress. Previous recordings must be stopped before a new recording can be started.
+* Document icon fix in the hint screen
+* Fixed ProgressBar overlap on email code submission screen
+* Translations fixed on the first screen for Bank, Work, Payroll Data and CustomInput products
+
+
+
 # Version 3.22.0
 ###### 27 May 2022
 

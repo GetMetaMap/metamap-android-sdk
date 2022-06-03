@@ -48,7 +48,7 @@ repositories{
 
 dependencies {
     //Dependency for Mati
-    implementation ('com.metamap:android-sdk:3.22.0'){
+    implementation ('com.metamap:android-sdk:3.22.1'){
         exclude group: 'org.json', module: 'json'
     }
 

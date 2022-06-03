@@ -46,10 +46,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   }
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.22.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.22.1, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.22.0'){
+  implementation ('com.metamap:android-sdk:3.22.1'){
 	exclude group: 'org.json', module: 'json'
   }
   ```
