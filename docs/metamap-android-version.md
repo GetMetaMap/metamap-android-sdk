@@ -11,6 +11,16 @@ hidden: true
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
 
+# Version 3.22.2
+###### 15 June 2022
+
+#### Bug Fixes
+* Fixed: IllegalStateException: KoinApplication has not been started
+* `metamap_` prefix added to all keys for string resources to avoid any conflicts with the client applications
+* Resolved Github issue: https://github.com/GetMetaMap/metamap-android-sdk/issues/37
+
+
+
 # Version 3.22.1
 ###### 03 June 2022
 

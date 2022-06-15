@@ -46,10 +46,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   }
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.22.1, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.22.2, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.22.1'){
+  implementation ('com.metamap:android-sdk:3.22.2'){
 	exclude group: 'org.json', module: 'json'
   }
   ```
@@ -444,8 +444,6 @@ You can use metadata to set specific parameters, including setting a selected la
 key: `fixedLanguage` <br/>
 value: locale code of language
 
-**_NOTE_: The language locale is the 2-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for the language's country of origin. For instance, Portuguese would use Portugal's code, `pt`.**
-
 ### Example: Set the Language Code for Spain
 
 To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es`.
@@ -454,7 +452,7 @@ To set the language code for Spain to Spanish, we would set the `fixedLanguage` 
 
 ```java
 
-UIConfig uiConfig = new UIConfig(MetamapLanguage.ENGLISH);
+UIConfig uiConfig = new UIConfig(MetamapLanguage.SPANISH);
 
 new Metadata.Builder()
                 .uiConfig(uiConfig)
@@ -464,7 +462,7 @@ new Metadata.Builder()
 **Kotlin**
 ```kotlin
 
-val uiConfig = UIConfig(fixedLanguage = MetamapLanguage.ENGLISH)
+val uiConfig = UIConfig(fixedLanguage = MetamapLanguage.SPANISH)
 
 Metadata.Builder()
                 .uiConfig(uiConfig)
@@ -517,3 +515,44 @@ Metadata.Builder()
 ```
 
 If you use `MetamapButton`, these values will be ignored and `MetamapButton`'s colors will be applied to all screens.
+
+To set the identity id you can use a builder method like in the example below:
+
+**Java**
+
+```java
+
+new Metadata.Builder()
+                .identityId("MY IDENTITY ID")
+                .build();
+```
+
+**Kotlin**
+```kotlin
+
+Metadata.Builder()
+                .identityId("MY IDENTITY ID")
+                .build()
+```
+
+
+For other data you can use additionalData builder method providing key value pairs like in the example below:
+
+**Java**
+
+```java
+
+new Metadata.Builder()
+                .additionalData("key1" "value")
+                .additionalData("key2" 24)
+                .build();
+```
+
+**Kotlin**
+```kotlin
+
+Metadata.Builder()
+                .additionalData("key1" "value")
+                .additionalData("key2" 32)
+                .build()
+```
