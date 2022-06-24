@@ -516,14 +516,16 @@ Metadata.Builder()
 
 If you use `MetamapButton`, these values will be ignored and `MetamapButton`'s colors will be applied to all screens.
 
-To set the identity id you can use a builder method like in the example below:
+### Example: Set `identityId` for re-verification
+
+To set the identity id you can use the Metadata builder method `identityId` like in the example below:
 
 **Java**
 
 ```java
 
 new Metadata.Builder()
-                .identityId("MY IDENTITY ID")
+                .identityId("MY_IDENTITY_ID")
                 .build();
 ```
 
@@ -531,10 +533,12 @@ new Metadata.Builder()
 ```kotlin
 
 Metadata.Builder()
-                .identityId("MY IDENTITY ID")
+                .identityId("MY_IDENTITY_ID")
                 .build()
 ```
 
+
+### Example: other data
 
 For other data you can use additionalData builder method providing key value pairs like in the example below:
 
