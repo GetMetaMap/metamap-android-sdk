@@ -11,6 +11,26 @@ hidden: true
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
 
+# Version 3.22.3
+###### 29 June 2022
+
+#### Bug Fixes
+* UserAgent information update which will fix the bug related to the device information in the dashboard
+* Captured media files are being removed right after they will no longer be re-used
+* Fixed bug when the app language could remain the same after the language was changed several times
+* Fixed: `JSONException: No value for inputId`
+* Fixed: `IllegalStateException: KoinApplication has not been started`
+* Fixed: `NullPointerException: Attempt to invoke virtual method 'int android.view.Display.getRotation()' on a null object reference`
+
+#### Updated Features
+Removed library `androidx.cardview:cardview`
+Removed library `org.jetbrains.kotlin:kotlin-stdlib-jdk7`
+Removed library `androidx.fragment:fragment-ktx`
+Removed library `androidx.core:core-ktx`
+Removed library `androidx.lifecycle:lifecycle-runtime-ktx`
+Removed library `androidx.navigation:navigation-dynamic-features-fragment`
+
+
 # Version 3.22.2
 ###### 15 June 2022
 

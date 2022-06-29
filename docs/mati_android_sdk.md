@@ -46,10 +46,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   }
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.22.2, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.22.3, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.22.2'){
+  implementation ('com.metamap:android-sdk:3.22.3'){
 	exclude group: 'org.json', module: 'json'
   }
   ```
@@ -60,27 +60,20 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 * `androidx.appcompat:appcompat:1.3.1`
 * `androidx.recyclerview:recyclerview:1.2.1`
-* `androidx.cardview:cardview:1.0.0`
 * `androidx.constraintlayout:constraintlayout:2.1.2`
 * `androidx.lifecycle:lifecycle-process:2.2.0`
 * `androidx.lifecycle:lifecycle-common-java8:2.2.0`
 * `com.google.code.gson:gson:2.8.5`
-* `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21`
-* `androidx.fragment:fragment-ktx:1.3.0`
-* `androidx.core:core-ktx:1.7.0`
 * `io.socket:socket.io-client:1.0.0`
 * `androidx.camera:camera-core:1.1.0-rc01`
 * `androidx.camera:camera-camera2:1.1.0-rc01`
 * `androidx.camera:camera-lifecycle:1.1.0-rc01`
 * `androidx.camera:camera-video:1.1.0-rc01`
 * `androidx.camera:camera-view:1.1.0-rc01`
-* `androidx.concurrent:concurrent-futures-ktx:1.1.0`
 * `androidx.window:window:1.0.0`
 * `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
-* `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
 * `androidx.navigation:navigation-fragment-ktx:2.3.3`
 * `androidx.navigation:navigation-ui-ktx:2.3.3`
-* `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
 * `io.coil-kt:coil:1.4.0`
 * `io.coil-kt:coil-svg:1.4.0`
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
