@@ -79,9 +79,9 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
 * `io.insert-koin:koin-core:3.1.5`
 * `io.insert-koin:koin-android:3.1.5`
-* `io.ktor:ktor-client-android:1.5.2`
-* `io.ktor:ktor-client-serialization:1.5.2`
-* `io.ktor:ktor-client-logging-jvm:1.5.2`
+* `io.ktor:ktor-client-android:1.5.4`
+* `io.ktor:ktor-client-serialization:1.5.4`
+* `io.ktor:ktor-client-logging-jvm:1.5.4`
 
 ## Usage
 
