@@ -11,6 +11,25 @@ hidden: true
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
 
+# Version 3.22.4
+###### 15 July 2022
+
+#### Updated Features
+* Brazilian driving licenses will require one page
+* SDK icons updated
+
+#### Bug Fixes
+* Files upload screens will open the exit screen on back press
+* Fixed duplicate bank account icon on the first screen
+* Fixed behaviour when app was brought back to foreground from app icon click
+* Fixed endless file uploading issue when the app was sent to background during it
+* Fixed ApplicationNotResponding issue
+* Fixed `FileNotFoundException`
+* Fixed `IllegalStateException Host view isn't ready to create a ViewBinding instance`
+* CameraX version updated to 1.1.0
+* Other minor improvements
+
+
 # Version 3.22.3
 ###### 29 June 2022
 
