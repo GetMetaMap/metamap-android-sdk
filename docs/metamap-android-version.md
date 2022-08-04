@@ -10,6 +10,21 @@ category: 61ae8e8dba577a0010791480
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
 
+# Version 3.22.5
+###### 03 August 2022
+
+#### Updated Features
+* Removed library `io.socket:socket.io-client`
+
+#### Bug Fixes
+* In case of unexpected crashes the SDK will close not affecting the client application
+* Added support to languages Spanish, Portuguese, French and Russian for the countries list
+* Icons loading on the start screen fixed
+* Fixed `IOException Prepare failed.: status=0x64 onSurfaceTextureAvailable`
+* Fixed `IllegalArgumentException android.graphics.Bitmap in createBitmap`
+* Other minor improvements
+
+
 # Version 3.22.4
 ###### 15 July 2022
 

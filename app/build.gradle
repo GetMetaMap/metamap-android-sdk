@@ -48,9 +48,7 @@ repositories{
 
 dependencies {
     //Dependency for Mati
-    implementation ('com.metamap:android-sdk:3.22.4'){
-        exclude group: 'org.json', module: 'json'
-    }
+    implementation ('com.metamap:android-sdk:3.22.5')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'

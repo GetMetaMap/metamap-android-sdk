@@ -41,17 +41,13 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 - Add the following to your app-level gradle dependencies using your version of the MetaMap Android SDK:
 
   ```
-  implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>'){
-	exclude group: 'org.json', module: 'json'
-  }
+  implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.22.4, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.22.5, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.22.4'){
-	exclude group: 'org.json', module: 'json'
-  }
+  implementation ('com.metamap:android-sdk:3.22.5')
   ```
 
 Then sync your project with the gradle files.
@@ -64,7 +60,6 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 * `androidx.lifecycle:lifecycle-process:2.2.0`
 * `androidx.lifecycle:lifecycle-common-java8:2.2.0`
 * `com.google.code.gson:gson:2.8.5`
-* `io.socket:socket.io-client:1.0.0`
 * `androidx.camera:camera-core:1.1.0-rc01`
 * `androidx.camera:camera-camera2:1.1.0-rc01`
 * `androidx.camera:camera-lifecycle:1.1.0-rc01`
