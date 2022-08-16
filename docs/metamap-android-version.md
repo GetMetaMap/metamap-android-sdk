@@ -10,6 +10,16 @@ category: 61ae8e8dba577a0010791480
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
 
+# Version 3.22.6
+###### 16 August 2022
+
+#### Bug Fixes
+* Fixed SDK behaviour when the app is being killed by the system
+* Fixed crash when wrong types of the config data are provided through the metadata
+* Fixed: `FileNotFoundException: No such file or directory`
+* SDK error handling improvements
+
+
 # Version 3.22.5
 ###### 03 August 2022
 
