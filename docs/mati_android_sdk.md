@@ -547,6 +547,7 @@ Metadata.Builder()
                 .additionalData("key1" "value")
                 .additionalData("key2" 32)
                 .build()
+```
 
 
 ## Some error codes you may get during integration
@@ -555,4 +556,3 @@ Metadata.Builder()
 
 `403` - MetaMap credentials issues: please check your client id and MetaMap id
 
-```
