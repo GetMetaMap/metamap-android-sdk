@@ -9,6 +9,18 @@ category: 61ae8e8dba577a0010791480
 
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
 
+# Version 3.23.0
+###### 05 September 2022
+
+#### Updated Features
+* One sided documents support
+* New icons for documents steps map screen
+
+#### Bug Fixes
+* Fixed: `IllegalStateException Fragment DocumentHintFragment not attached to a context`
+* Fixed: `InternalError Thread starting during runtime shutdown`
+* Fixed: `IOException Prepare failed.: status=0x64`
+* Fixed: `FileNotFoundException 1661314210942.jpg: open failed: ENOENT`
 
 # Version 3.22.6
 ###### 16 August 2022
