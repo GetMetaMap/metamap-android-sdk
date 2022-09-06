@@ -60,11 +60,11 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 * `androidx.lifecycle:lifecycle-process:2.2.0`
 * `androidx.lifecycle:lifecycle-common-java8:2.2.0`
 * `com.google.code.gson:gson:2.8.5`
-* `androidx.camera:camera-core:1.1.0-rc01`
-* `androidx.camera:camera-camera2:1.1.0-rc01`
-* `androidx.camera:camera-lifecycle:1.1.0-rc01`
-* `androidx.camera:camera-video:1.1.0-rc01`
-* `androidx.camera:camera-view:1.1.0-rc01`
+* `androidx.camera:camera-core:1.1.0`
+* `androidx.camera:camera-camera2:1.1.0`
+* `androidx.camera:camera-lifecycle:1.1.0`
+* `androidx.camera:camera-video:1.1.0`
+* `androidx.camera:camera-view:1.1.0`
 * `androidx.window:window:1.0.0`
 * `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
 * `androidx.navigation:navigation-fragment-ktx:2.3.3`
