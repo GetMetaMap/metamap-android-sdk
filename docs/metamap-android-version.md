@@ -4,10 +4,16 @@ excerpt: "MetaMap's Android SDK Changelog"
 slug: "android-changelog"
 category: 61ae8e8dba577a0010791480
 ---
-
 # Feedback
 
 If you have an issue or ideas to improve MetaMap's Android SDK, please look at our [issues](https://github.com/GetMetaMap/metamap-android-sdk/issues) page to see if your issue has been reported or to add your own.
+
+
+# Releases
+
+| LTS version (Recommended for most users) | Current Version(Latest features) |
+| :---:   | :---: |
+| 3.23.0 | 3.23.0   |
 
 # Version 3.23.0
 ###### 05 September 2022
