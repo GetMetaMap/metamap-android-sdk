@@ -44,10 +44,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.23.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.24.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.23.0')
+  implementation ('com.metamap:android-sdk:3.24.0')
   ```
 
 Then sync your project with the gradle files.
@@ -56,7 +56,7 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 * `androidx.appcompat:appcompat:1.3.1`
 * `androidx.recyclerview:recyclerview:1.2.1`
-* `androidx.constraintlayout:constraintlayout:2.1.2`
+* `androidx.constraintlayout:constraintlayout:2.1.4`
 * `androidx.lifecycle:lifecycle-process:2.2.0`
 * `androidx.lifecycle:lifecycle-common-java8:2.2.0`
 * `com.google.code.gson:gson:2.8.5`
@@ -66,17 +66,18 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 * `androidx.camera:camera-video:1.1.0`
 * `androidx.camera:camera-view:1.1.0`
 * `androidx.window:window:1.0.0`
-* `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
-* `androidx.navigation:navigation-fragment-ktx:2.3.3`
-* `androidx.navigation:navigation-ui-ktx:2.3.3`
-* `io.coil-kt:coil:1.4.0`
-* `io.coil-kt:coil-svg:1.4.0`
+* `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4`
+* `androidx.navigation:navigation-fragment-ktx:2.5.2`
+* `androidx.navigation:navigation-ui-ktx:2.5.2`
+* `io.coil-kt:coil:2.1.0`
+* `io.coil-kt:coil-svg:2.1.0`
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
-* `io.insert-koin:koin-core:3.1.5`
-* `io.insert-koin:koin-android:3.1.5`
+* `io.insert-koin:koin-core:3.2.2`
+* `io.insert-koin:koin-android:3.2.2`
 * `io.ktor:ktor-client-android:1.5.4`
 * `io.ktor:ktor-client-serialization:1.5.4`
 * `io.ktor:ktor-client-logging-jvm:1.5.4`
+* `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.32`
 
 ## Usage
 
