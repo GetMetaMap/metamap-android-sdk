@@ -52,7 +52,7 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 
 Then sync your project with the gradle files.
 
-_**Note**_ The following dependencies will be automatically installed with MetaMap library. The version numbers listed are subject to change:
+_**Note**_ The list below shows the libraries used by Metamap SDK in its latest version. If you use any of these libraries in your project it's important for you to use the same versions to avoid any crashes. The actual dependencies and their versions for each MetaMap SDK version can be found [here](https://search.maven.org/artifact/com.metamap/android-sdk).
 
 * `androidx.appcompat:appcompat:1.3.1`
 * `androidx.recyclerview:recyclerview:1.2.1`
