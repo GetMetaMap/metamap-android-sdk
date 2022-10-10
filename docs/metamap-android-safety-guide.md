@@ -1,6 +1,6 @@
 ---
 title: "Android Data Safety Guide"
-excerpt: "Add the Metamap button to your Android app."
+excerpt: "Ensure that you comply with Google Play's data disclosure requirements."
 slug: "android-data-safety-guide"
 category: 61ae8e8dba577a0010791480
 ---
