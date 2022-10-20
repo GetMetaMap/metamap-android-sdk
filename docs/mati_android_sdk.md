@@ -44,10 +44,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.24.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.25.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.24.0')
+  implementation ('com.metamap:android-sdk:3.25.0')
   ```
 
 Then sync your project with the gradle files.
@@ -74,9 +74,10 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
 * `io.insert-koin:koin-core:3.2.2`
 * `io.insert-koin:koin-android:3.2.2`
-* `io.ktor:ktor-client-android:1.5.4`
-* `io.ktor:ktor-client-serialization:1.5.4`
-* `io.ktor:ktor-client-logging-jvm:1.5.4`
+* `io.ktor:ktor-client-android:2.0.3`
+* `io.ktor:ktor-client-content-negotiation:2.0.3`
+* `io.ktor:ktor-client-logging-jvm:2.0.3`
+* `io.ktor:ktor-serialization-kotlinx-json:2.0.3`
 * `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.32`
 
 ## Usage
