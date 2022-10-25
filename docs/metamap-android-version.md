@@ -13,7 +13,18 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.24.0   |
+| 3.23.0 | 3.25.0   |
+
+
+# Version 3.25.0
+###### 04 October 2022
+
+#### Updated Features
+* Third party libraries updated as follows:
+    - `io.ktor:ktor-client-android:`**1.5.4** -> **2.0.3**
+    - `io.ktor:ktor-client-content-negotiation:`**1.5.4** -> **2.0.3**
+    - `io.ktor:ktor-serialization-kotlinx-json:`**1.5.4** -> **2.0.3**
+    - `io.ktor:ktor-client-logging-jvm:`**1.5.4** -> **2.0.3**
 
 
 # Version 3.24.0
@@ -22,20 +33,20 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 #### Updated Features
 * Liveness and voice liveness recording time limit is set to 20 seconds
 * SDK initialization failure will show a meaning full error
+* Third party libraries updated as follows:
+    - io.insert-koin:koin-core:**3.1.4** -> **3.2.2**
+    - io.insert-koin:koin-android:**3.1.4** -> **3.2.2**
+    - org.jetbrains.kotlinx:kotlinx-coroutines-android:**1.5.0** -> **1.6.4**
+    - io.coil-kt:coil:**1.4.0** -> **2.1.0**
+    - androidx.constraintlayout:constraintlayout:**2.1.2** -> **2.1.4**
+    - androidx.navigation:navigation-fragment-ktx:**2.3.3** -> **2.5.2**
+    - androidx.navigation:navigation-ui-ktx:**2.3.3** -> **2.5.2**
+    - org.jetbrains.kotlin:kotlin-stdlib-jdk7:**1.5.21** -> **1.5.32**
 
 #### Bug Fixes
 * Fixed: Frame size for document capture feature
 * Fixed: Denied camera permission screen’s back button behaviour changed, it will open Exit verification screen
 * Fixed: Dark background changed to white for android dark mode
-* Third party libraries updated as following:
-    - io.insert-koin:koin-core:3.1.4 -> 3.2.2
-    - io.insert-koin:koin-android:3.1.4 -> 3.2.2
-    - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0 -> 1.6.4
-    - io.coil-kt:coil:1.4.0 -> 2.1.0
-    - androidx.constraintlayout:constraintlayout:2.1.2 -> 2.1.4
-    - androidx.navigation:navigation-fragment-ktx:2.3.3 -> 2.5.2
-    - androidx.navigation:navigation-ui-ktx:2.3.3 -> 2.5.2
-    - org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21 -> 1.5.32
 
 
 # Version 3.23.0
