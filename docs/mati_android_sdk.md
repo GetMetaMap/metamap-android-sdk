@@ -11,6 +11,7 @@ You can go to GitHub to download the [MetaMap Android Java demo app](https://git
 
 
 ## Requirements
+* Android SDK size 3.5MB
 * &gt;2.5MB of disk space
 * Android OS version: v5.0 (API v21) or higher.
 * compileSdkVersion: 31
