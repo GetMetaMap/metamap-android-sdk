@@ -45,10 +45,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.23.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.26.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.23.0')
+  implementation ('com.metamap:android-sdk:3.26.0')
   ```
 
 Then sync your project with the gradle files.
@@ -68,8 +68,8 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 * `androidx.camera:camera-view:1.1.0`
 * `androidx.window:window:1.0.0`
 * `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4`
-* `androidx.navigation:navigation-fragment-ktx:2.5.2`
-* `androidx.navigation:navigation-ui-ktx:2.5.2`
+* `androidx.navigation:navigation-fragment-ktx:2.5.3`
+* `androidx.navigation:navigation-ui-ktx:2.5.3`
 * `io.coil-kt:coil:2.1.0`
 * `io.coil-kt:coil-svg:2.1.0`
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
