@@ -13,8 +13,21 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.25.0   |
+| 3.23.0 | 3.26.0   |
 
+# Version 3.26.0
+#### Updated Features
+* SDK start-up loading UI change
+* SDK size is reduced by **~30%** (now it is **~3.5MB**)
+
+#### Bug Fixes
+* Fixed issue when getting noFace error from BE twice not showed on the second time
+* Fixed issue when getting crashed on specific conditions on eSign step
+* Fixed issue when Liveness stack on upload state after the second failure
+* Overall performance increase and minor improvements
+* Third party libraries updated as following:
+    - `androidx.navigation:navigation-fragment-ktx:`**2.5.2** -> **2.5.3**
+    - `androidx.navigation:navigation-ui-ktx:`**2.5.2** -> **2.5.3**
 
 # Version 3.25.0
 ###### 04 October 2022
