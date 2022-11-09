@@ -13,7 +13,12 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.26.0   |
+| 3.23.0 | 3.26.1   |
+
+# Version 3.26.1
+###### 09 November 2022
+#### Bug Fixes
+* Fixed crash on Location Intelligence for Android API version 30 and above
 
 # Version 3.26.0
 ###### 07 November 2022
