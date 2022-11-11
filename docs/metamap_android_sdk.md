@@ -7,7 +7,7 @@ category: 61ae8e8dba577a0010791480
 
 ## Android Demo App
 
-You can go to GitHub to download the [MetaMap Android Java demo app](https://github.com/GetMetaMap/mati-mobile-examples/tree/main/javaDemoApp(native)).
+You can go to GitHub to download the [MetaMap Android Java demo app](https://github.com/GetMetaMap/metamap-mobile-examples/tree/main/javaDemoApp(native)).
 
 
 ## Requirements
