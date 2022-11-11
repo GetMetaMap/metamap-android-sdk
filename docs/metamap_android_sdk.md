@@ -330,7 +330,7 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 
     **Java**
     ```java
-	public class YourActivity extends AppCompatActivity implements MatiCallback {
+	public class YourActivity extends AppCompatActivity {
 
 	    @Override
 	    protected void onCreate(Bundle savedInstanceState) {
@@ -338,7 +338,7 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 
 	        setContentView(R.layout.activity_main);
 
-	        this.<MatiButton>findViewById(R.id.metamapButton).setParams(
+	        this.<MetamapButton>findViewById(R.id.metamapButton).setParams(
 	        activityResultLauncher,
 		    this,
 	            "CLIENT_ID",
