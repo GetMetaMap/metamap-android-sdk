@@ -11,11 +11,11 @@ You can go to GitHub to download the [MetaMap Android Java demo app](https://git
 
 
 ## Requirements
-* Android SDK size ~ 3.7MB
+* Android SDK size ~ 5.11MB
 * Android OS version: v5.0 (API v21) or higher.
 * compileSdkVersion: 31
 * targetSdkVersion: 31
-* Kotlin: 1.5.21 or higher.
+* Kotlin: 1.6.21 or higher.
 
 ## Install the MetaMap Android SDK
 
@@ -44,10 +44,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.26.1, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.27.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.26.1')
+  implementation ('com.metamap:android-sdk:3.27.0')
   ```
 
 Then sync your project with the gradle files.
