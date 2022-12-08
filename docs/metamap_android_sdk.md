@@ -72,8 +72,6 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 * `io.coil-kt:coil:2.1.0`
 * `io.coil-kt:coil-svg:2.1.0`
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
-* `io.insert-koin:koin-core:3.2.2`
-* `io.insert-koin:koin-android:3.2.2`
 * `io.ktor:ktor-client-android:2.0.3`
 * `io.ktor:ktor-client-content-negotiation:2.0.3`
 * `io.ktor:ktor-client-logging-jvm:2.0.3`
