@@ -21,6 +21,7 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 * UI Redesign for Location Intelligence Feature
 * Kotlin version upgraded to 1.6.21
 * Device root detection
+* Removed dependency on Koin
 
 #### Bug Fixes
 * Fixed: IP Restriction feature not working
