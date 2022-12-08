@@ -13,7 +13,20 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.26.1   |
+| 3.23.0 | 3.27.0  |
+
+# Version 3.27.0
+###### 08 December 2022
+#### Updated Features
+* UI Redesign for Location Intelligence Feature
+* Kotlin version upgraded to 1.6.21
+* Device root detection
+
+#### Bug Fixes
+* Fixed: IP Restriction feature not working
+* Fixed: Phone number submisison, country code getting duplicated
+* Fixed: Unnecessary loading shown at bank account data step
+* Fixed: Crashes related to Webview
 
 # Version 3.26.1
 ###### 09 November 2022
