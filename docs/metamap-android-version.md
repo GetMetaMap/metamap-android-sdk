@@ -13,7 +13,20 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.27.0  |
+| 3.23.0 | 3.28.0  |
+
+# Version 3.28.0
+###### 17 January 2022
+#### Updated Features
+* UI Redesign: Biometric, Documents, Phone, Email, E-signature, Start screen, Exit screen, Error and permission screens
+* Increase image resolution in converting PDF to PNG
+* Updated Socket io version to 2.1.0
+* Made IP restriction a feature like in the Web: showing it before the Start screen
+
+#### Bug Fixes
+* Fixed: Increased image resolution in converting PDF to PNG
+* Fixed: Identity ID field doesn't appear in metadata when using retrieve verification data endpoint
+* Fixed: proguard issue
 
 # Version 3.27.0
 ###### 08 December 2022
