@@ -26,6 +26,7 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 #### Bug Fixes
 * Fixed: Increased image resolution in converting PDF to PNG
 * Fixed: Identity ID field doesn't appear in metadata when using retrieve verification data endpoint
+* Fixed Koin related issue
 * Fixed: proguard issue
 
 # Version 3.27.0
