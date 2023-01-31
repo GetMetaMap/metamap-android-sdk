@@ -13,10 +13,23 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.28.0  |
+| 3.23.0 | 3.29.0  |
+
+
+# Version 3.29.0
+###### 31 January 2023
+#### New Features
+* Video agreement feature
+
+#### Updated Features
+*  Redesigned docs map screen
+
+#### Bug Fixes
+* Fixed RTL issue
+* Fixed E-signature back button is not visible to read PDF documents
 
 # Version 3.28.0
-###### 17 January 2022
+###### 17 January 2023
 #### Updated Features
 * UI Redesign: Biometric, Documents, Phone, Email, E-signature, Start screen, Exit screen, Error and permission screens
 * Increase image resolution in converting PDF to PNG
