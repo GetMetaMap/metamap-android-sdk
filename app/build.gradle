@@ -48,7 +48,7 @@ repositories{
 
 dependencies {
     //Dependency for MetaMap
-    implementation ('com.metamap:android-sdk:3.28.0')
+    implementation ('com.metamap:android-sdk:3.29.0')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
