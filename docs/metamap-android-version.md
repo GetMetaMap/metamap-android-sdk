@@ -13,8 +13,13 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.29.0  |
+| 3.23.0 | 3.29.1  |
 
+
+# Version 3.29.1
+###### 10 February 2023
+#### Bug Fixes
+* Fixed: Phone number input validation issue in phone verification
 
 # Version 3.29.0
 ###### 31 January 2023
