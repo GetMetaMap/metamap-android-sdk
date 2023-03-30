@@ -44,10 +44,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.30.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.30.1, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.30.0')
+  implementation ('com.metamap:android-sdk:3.30.1')
   ```
 
 Then sync your project with the gradle files.
