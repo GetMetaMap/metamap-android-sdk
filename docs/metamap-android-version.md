@@ -13,7 +13,12 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.30.0  |
+| 3.23.0 | 3.30.1  |
+
+# Version 3.30.1
+###### 30 March 2023
+#### Bug Fixes
+* Fixed: Exceptions when new process is started
 
 # Version 3.30.0
 ###### 18 March 2023
