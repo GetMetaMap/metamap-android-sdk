@@ -44,10 +44,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.30.1, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.31.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.30.1')
+  implementation ('com.metamap:android-sdk:3.31.0')
   ```
 
 Then sync your project with the gradle files.
@@ -77,9 +77,6 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 * `io.ktor:ktor-client-logging-jvm:2.0.3`
 * `io.ktor:ktor-serialization-kotlinx-json:2.0.3`
 * `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.32`
-
-_**Note**_ If you are using `WorkManager`, also consider to add MultiProcess Support for Workmanager
-* `androidx.work:work-multiprocess:your_work_version`
 
 ## Usage
 
@@ -552,6 +549,30 @@ Metadata.Builder()
                 .build()
 ```
 
+### Smart Capture
+
+To enable document smart capture you should add smart capture depednecy to your app. 
+```
+implementation "com.metamap:android-sdk-smart-capture:0.1.0-beta"
+```
+
+Than add the SmartCaptureManager to Metamap SDK, before calling ```startFlow```
+
+**Java**
+
+```java
+
+MetamapSdk.INSTANCE.setSmartCaptureProvider(new SmartCaptureManager());
+```
+
+**Kotlin**
+```kotlin
+
+MetamapSdk.setSmartCaptureProvider(SmartCaptureManager())
+```
+
+
+Please note that the smart capture is still in beta.
 
 ## Some error codes you may get during integration
 
