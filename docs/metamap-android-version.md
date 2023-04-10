@@ -13,7 +13,19 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.30.1  |
+| 3.23.0 | 3.31.0  |
+
+# Version 3.31.0
+###### 10 April 2023
+#### New Features
+* Support reusage
+* Smart capturing: automatic image capture functionality for documents (beta)
+* Colombia Credit Check
+* PRS
+
+#### Bug Fixes
+* Fixed Unable to validate otp in phone check
+* Fixed Cursor is always automatically moves to end of the number when trying to edit
 
 # Version 3.30.1
 ###### 30 March 2023
