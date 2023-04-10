@@ -7,15 +7,15 @@ category: 61ae8e8dba577a0010791480
 
 ## Android Demo App
 
-You can go to GitHub to download the [MetaMap Android Java demo app](https://github.com/GetMetaMap/mati-mobile-examples/tree/main/javaDemoApp(native)).
+You can go to GitHub to download the [MetaMap Android Java demo app](https://github.com/GetMetaMap/metamap-mobile-examples/tree/main/javaDemoApp(native)).
 
 
 ## Requirements
-* &gt;2.5MB of disk space
+* Android SDK size ~ 3.5 MB
 * Android OS version: v5.0 (API v21) or higher.
 * compileSdkVersion: 31
 * targetSdkVersion: 31
-* Kotlin: 1.5.21 or higher.
+* Kotlin: 1.6.21 or higher.
 
 ## Install the MetaMap Android SDK
 
@@ -41,53 +41,45 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 - Add the following to your app-level gradle dependencies using your version of the MetaMap Android SDK:
 
   ```
-  implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>'){
-	exclude group: 'org.json', module: 'json'
-  }
+  implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.21.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.30.1, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.21.0'){
-	exclude group: 'org.json', module: 'json'
-  }
+  implementation ('com.metamap:android-sdk:3.30.1')
   ```
 
 Then sync your project with the gradle files.
 
-_**Note**_ The following dependencies will be automatically installed with MetaMap library. The version numbers listed are subject to change:
+_**Note**_ The list below shows the libraries used by Metamap SDK in its latest version. If you use any of these libraries in your project it's important for you to use the same versions to avoid any crashes. The actual dependencies and their versions for each MetaMap SDK version can be found [here](https://search.maven.org/artifact/com.metamap/android-sdk).
 
 * `androidx.appcompat:appcompat:1.3.1`
 * `androidx.recyclerview:recyclerview:1.2.1`
-* `androidx.cardview:cardview:1.0.0`
-* `androidx.constraintlayout:constraintlayout:2.1.2`
+* `androidx.constraintlayout:constraintlayout:2.1.4`
 * `androidx.lifecycle:lifecycle-process:2.2.0`
 * `androidx.lifecycle:lifecycle-common-java8:2.2.0`
 * `com.google.code.gson:gson:2.8.5`
-* `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21`
-* `androidx.fragment:fragment-ktx:1.3.0`
-* `androidx.core:core-ktx:1.7.0`
-* `io.socket:socket.io-client:1.0.0`
-* `androidx.camera:camera-core:1.1.0-beta02`
-* `androidx.camera:camera-camera2:1.1.0-beta02`
-* `androidx.camera:camera-lifecycle:1.1.0-beta02`
-* `androidx.camera:camera-video:1.1.0-beta02`
-* `androidx.camera:camera-view:1.1.0-beta02`
-* `androidx.concurrent:concurrent-futures-ktx:1.1.0`
+* `androidx.camera:camera-core:1.1.0`
+* `androidx.camera:camera-camera2:1.1.0`
+* `androidx.camera:camera-lifecycle:1.1.0`
+* `androidx.camera:camera-video:1.1.0`
+* `androidx.camera:camera-view:1.1.0`
 * `androidx.window:window:1.0.0`
-* `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0`
-* `androidx.lifecycle:lifecycle-runtime-ktx:2.3.1`
-* `androidx.navigation:navigation-fragment-ktx:2.3.3`
-* `androidx.navigation:navigation-ui-ktx:2.3.3`
-* `androidx.navigation:navigation-dynamic-features-fragment:2.3.3`
-* `io.coil-kt:coil:1.4.0`
+* `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4`
+* `androidx.navigation:navigation-fragment-ktx:2.5.3`
+* `androidx.navigation:navigation-ui-ktx:2.5.3`
+* `io.coil-kt:coil:2.1.0`
+* `io.coil-kt:coil-svg:2.1.0`
 * `org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2`
-* `io.insert-koin:koin-core:3.1.4`
-* `io.insert-koin:koin-android:3.1.4`
-* `io.ktor:ktor-client-android:1.5.2`
-* `io.ktor:ktor-client-serialization:1.5.2`
-* `io.ktor:ktor-client-logging-jvm:1.5.2`
+* `io.ktor:ktor-client-android:2.0.3`
+* `io.ktor:ktor-client-content-negotiation:2.0.3`
+* `io.ktor:ktor-client-logging-jvm:2.0.3`
+* `io.ktor:ktor-serialization-kotlinx-json:2.0.3`
+* `org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.32`
+
+_**Note**_ If you are using `WorkManager`, also consider to add MultiProcess Support for Workmanager
+* `androidx.work:work-multiprocess:your_work_version`
 
 ## Usage
 
@@ -152,8 +144,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
             "YOUR_CLIENT_ID",
             "YOUR_FLOW_ID",
             new Metadata.Builder()
-                    .with("userId", "qwfguweo")
-                    .with("type", 2)
+                    .additionalData("userId", "qwfguweo")
+                    .additionalData("type", 2)
                     .build());
     }
     ```
@@ -339,7 +331,7 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
     **Java**
     ```java
-	public class YourActivity extends AppCompatActivity implements MatiCallback {
+	public class YourActivity extends AppCompatActivity {
 
 	    @Override
 	    protected void onCreate(Bundle savedInstanceState) {
@@ -347,14 +339,14 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 
 	        setContentView(R.layout.activity_main);
 
-	        this.<MatiButton>findViewById(R.id.metamapButton).setParams(
+	        this.<MetamapButton>findViewById(R.id.metamapButton).setParams(
 	        activityResultLauncher,
 		    this,
 	            "CLIENT_ID",
 	            "FLOW_ID",
 	            new Metadata.Builder()
-	                .with("key_1", "value1")
-	                .with("key2", 2)
+	                .additionalData("key_1", "value1")
+	                .additionalData("key2", 2)
 	                .build());
 	    }
 
@@ -401,8 +393,8 @@ _**Note**_ The following dependencies will be automatically installed with MetaM
 	            "CLIENT_ID",
 	            "FLOW_ID",
 	            Metadata.Builder()
-	                .with("key_1", "value1")
-	                .with("key2", 2)
+	                .additionalData("key_1", "value1")
+	                .additionalData("key2", 2)
 	                .build())
 	    }
 
@@ -443,8 +435,6 @@ You can use metadata to set specific parameters, including setting a selected la
 key: `fixedLanguage` <br/>
 value: locale code of language
 
-**_NOTE_: The language locale is the 2-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for the language's country of origin. For instance, Portuguese would use Portugal's code, `pt`.**
-
 ### Example: Set the Language Code for Spain
 
 To set the language code for Spain to Spanish, we would set the `fixedLanguage` parameter to `es`.
@@ -452,15 +442,21 @@ To set the language code for Spain to Spanish, we would set the `fixedLanguage` 
 **Java**
 
 ```java
+
+UIConfig uiConfig = new UIConfig(MetamapLanguage.SPANISH);
+
 new Metadata.Builder()
-                .with("fixedLanguage", "es")
+                .uiConfig(uiConfig)
                 .build();
 ```
 
 **Kotlin**
 ```kotlin
+
+val uiConfig = UIConfig(fixedLanguage = MetamapLanguage.SPANISH)
+
 Metadata.Builder()
-                .with("fixedLanguage", "es")
+                .uiConfig(uiConfig)
                 .build()
 ```
 
@@ -483,19 +479,83 @@ value: parsed color-int value
 **Java**
 
 ```java
+
+UIConfig uiConfig = new UIConfig(
+                        null,
+                        Color.parseColor("#EF0404"),
+                        Color.parseColor("#FFFFFF")
+                    );
+
 new Metadata.Builder()
-                .with("buttonColor", Color.parseColor("#FF0000"))
-	    	.with("buttonTextColor", Color.parseColor("#FFFFFF"))
+                .uiConfig(uiConfig)
                 .build();
 ```
 
 
 **Kotlin**
 ```kotlin
+
+val uiConfig = UIConfig(
+                    buttonColor = Color.parseColor("#EF0404"),
+                    buttonTextColor = Color.parseColor("#FFFFFF")
+                )
+
 Metadata.Builder()
-                .with("buttonColor", Color.parseColor("#FF0000"))
-	    	.with("buttonTextColor", Color.parseColor("#FFFFFF"))
+                .uiConfig(uiConfig)
                 .build()
 ```
 
 If you use `MetamapButton`, these values will be ignored and `MetamapButton`'s colors will be applied to all screens.
+
+### Example: Set `identityId` for re-verification
+
+To set the identity id you can use the Metadata builder method `identityId` like in the example below:
+
+**Java**
+
+```java
+
+new Metadata.Builder()
+                .identityId("MY_IDENTITY_ID")
+                .build();
+```
+
+**Kotlin**
+```kotlin
+
+Metadata.Builder()
+                .identityId("MY_IDENTITY_ID")
+                .build()
+```
+
+
+### Example: other data
+
+For other data you can use additionalData builder method providing key value pairs like in the example below:
+
+**Java**
+
+```java
+
+new Metadata.Builder()
+                .additionalData("key1" "value")
+                .additionalData("key2" 24)
+                .build();
+```
+
+**Kotlin**
+```kotlin
+
+Metadata.Builder()
+                .additionalData("key1" "value")
+                .additionalData("key2" 32)
+                .build()
+```
+
+
+## Some error codes you may get during integration
+
+`402` - MetaMap services are not paid: please contact your customer success manager
+
+`403` - MetaMap credentials issues: please check your client id and MetaMap id
+

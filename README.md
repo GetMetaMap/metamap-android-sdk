@@ -1,6 +1,6 @@
-# Mati for Android Usage Guide
+# MetaMap for Android Usage Guide
 
-The Mati for Android usage guide can be found in the following location:
+The MetaMap for Android usage guide can be found in the following location:
 
 
-* [Mati for Android](docs/mati_android_sdk.md)
+* [MetaMap for Android](docs/metamap_android_sdk.md)
