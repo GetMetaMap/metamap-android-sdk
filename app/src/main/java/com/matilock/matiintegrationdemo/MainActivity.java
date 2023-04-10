@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.metamap.metamap_sdk.Metadata;
 import com.metamap.metamap_sdk.MetamapButton;
 import com.metamap.metamap_sdk.MetamapSdk;
+import com.metamap.smartcapture.SmartCaptureManager;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MetamapSdk.INSTANCE.setSmartCaptureProvider(new SmartCaptureManager());
         MetamapButton btn = findViewById(R.id.metamapButton);
 
         btn.setParams(
