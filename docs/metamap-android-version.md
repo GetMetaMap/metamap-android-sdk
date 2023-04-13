@@ -13,7 +13,13 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.31.0  |
+| 3.23.0 | 3.32.0  |
+
+# Version 3.32.0
+###### 13 April 2023
+#### New Features
+* Idemia SDK in webView
+* Added encryptionConfigurationId param
 
 # Version 3.31.0
 ###### 10 April 2023
