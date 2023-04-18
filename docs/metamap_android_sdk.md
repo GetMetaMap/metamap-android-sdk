@@ -556,6 +556,13 @@ To enable document smart capture you should add smart capture depednecy to your 
 implementation "com.metamap:android-sdk-smart-capture:0.1.0-beta"
 ```
 
+It will add extra MB to the app based on CPU architecture
+
+* armeabi-v7a: 3.1 MB
+* arm64-v8a: 5.6 MB
+* x86: 16.7 MB
+* x86_64: 25.1 MB
+
 Than add the SmartCaptureManager to Metamap SDK, before calling ```startFlow```
 
 **Java**
