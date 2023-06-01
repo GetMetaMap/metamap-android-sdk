@@ -552,7 +552,18 @@ Metadata.Builder()
 
 ### Smart Capture
 
-To enable document smart capture you should add smart capture depednecy to your app. 
+To enable document smart capture you should add ```jitpack.io``` to your repositories and smart capture dependency to your ```build.gradle```. 
+Add to your ```settings.gradle```
+
+```
+repositories {
+    ...
+    ...
+    maven { url 'https://jitpack.io' }
+}
+
+```
+
 ```
 implementation "com.metamap:android-sdk-smart-capture:0.1.0-beta"
 ```
@@ -564,19 +575,21 @@ It will add extra MB to the app based on CPU architecture
 * x86: 16.7 MB
 * x86_64: 25.1 MB
 
-Than add the SmartCaptureManager to Metamap SDK, before calling ```startFlow```
+If you will add the smart capture dependency, it will automatically enable smart capture, if you want to enable/disable it manually, please use those methods
 
 **Java**
 
 ```java
 
-MetamapSdk.INSTANCE.setSmartCaptureProvider(new SmartCaptureManager());
+MetamapSdk.INSTANCE.enableSmartCapture();
+MetamapSdk.INSTANCE.disableSmartCapture();
 ```
 
 **Kotlin**
 ```kotlin
 
-MetamapSdk.setSmartCaptureProvider(SmartCaptureManager())
+MetamapSdk.enableSmartCapture()
+MetamapSdk.disableSmartCapture()
 ```
 
 
