@@ -552,8 +552,8 @@ Metadata.Builder()
 
 ### Smart Capture
 
-To enable document smart capture you should add ```jitpack.io``` to your repositories and smart capture dependency to your ```build.gradle```. 
-Add to your ```settings.gradle```
+To enable document smart capture you should add ```jitpack.io``` to your repositories inside the ```settings.gradle``` file
+and add smart capture dependency to your ```build.gradle```
 
 ```
 repositories {
