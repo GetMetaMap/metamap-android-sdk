@@ -13,7 +13,23 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.32.0  |
+| 3.23.0 | 3.33.0  |
+
+# Version 3.33.0
+###### 1 Jun 2023
+#### New Features
+
+* Added green placeholder for smart capture like on iOS
+* Support re-usage feature for idemia
+* Added smart capture enabling/disabling mechanism
+* Error handling improvement
+* Pass server error to analytics
+
+#### Bug Fixes
+
+* Fixed EXIF data for uploaded document/photo
+* Reusage improvements and fixes
+* Fix issues in the analytics
 
 # Version 3.32.0
 ###### 13 April 2023
