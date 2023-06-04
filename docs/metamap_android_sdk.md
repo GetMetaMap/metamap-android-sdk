@@ -565,7 +565,7 @@ repositories {
 ```
 
 ```
-implementation "com.metamap:android-sdk-smart-capture:0.1.0-beta"
+implementation "com.metamap:android-sdk-smart-capture:0.2.0"
 ```
 
 It will add extra MB to the app based on CPU architecture
