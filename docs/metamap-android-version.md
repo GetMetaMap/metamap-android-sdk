@@ -13,7 +13,14 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.33.0  |
+| 3.23.0 | 3.33.1  |
+
+
+# Version 3.33.1
+###### 9 Jun 2023
+#### Bug Fixes
+
+* Correction of passport title
 
 # Version 3.33.0
 ###### 1 Jun 2023
