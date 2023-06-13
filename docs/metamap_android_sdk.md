@@ -120,9 +120,11 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 	    this.<MetamapButton>findViewById(R.id.metamapButton).setParams(
 	        activityResultLauncher,
 	        this,
-	        "CLIENT_ID",
-	        "FLOW_ID",
-	        METADATA);
+	        "YOUR_CLIENT_ID",
+	        "YOUR_FLOW_ID",
+	        METADATA,
+		"configurationId", //optional
+		"encryptionConfigurationId"); //optional
     }
     ```
 
@@ -161,8 +163,8 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 	    findViewById<MetamapButton>(R.id.metamapButton).setParams(
 	    	activityResultLauncher,
 	    	this,
-	        "CLIENT_ID",
-	        "FLOW_ID",
+	        "YOUR_CLIENT_ID",
+	        "YOUR_FLOW_ID",
 	        METADATA)
 	}
     ```
@@ -179,8 +181,8 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 
 	    findViewById<MetamapButton>(R.id.metamapButton).setParams(
 	    	this,
-	        "CLIENT_ID",
-	        "FLOW_ID",
+	        "YOUR_CLIENT_ID",
+	        "YOUR_FLOW_ID",
 	        METADATA)
 	}
     ```
@@ -340,8 +342,8 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 	        this.<MetamapButton>findViewById(R.id.metamapButton).setParams(
 	        activityResultLauncher,
 		    this,
-	            "CLIENT_ID",
-	            "FLOW_ID",
+	            "YOUR_CLIENT_ID",
+	            "YOUR_FLOW_ID",
 	            new Metadata.Builder()
 	                .additionalData("key_1", "value1")
 	                .additionalData("key2", 2)
@@ -388,12 +390,14 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 	        findViewById<MetamapButton>(R.id.metamapButton).setParams(
 	        activityResultLauncher,
 		    this,
-	            "CLIENT_ID",
-	            "FLOW_ID",
+	            "YOUR_CLIENT_ID",
+	            "YOUR_FLOW_ID",
 	            Metadata.Builder()
 	                .additionalData("key_1", "value1")
 	                .additionalData("key2", 2)
-	                .build())
+	                .build(),
+		    "configurationId", //optional
+		    "encryptionConfigurationId") //optional
 	    }
 
 	    private val activityResultLauncher =
@@ -480,8 +484,8 @@ value: parsed color-int value
 
 UIConfig uiConfig = new UIConfig(
                         null,
-                        Color.parseColor("#EF0404"),
-                        Color.parseColor("#FFFFFF")
+                        Color.parseColor("#EF0404"), //or ContextCompat.getColor(context, R.color.yourColor)
+                        Color.parseColor("#FFFFFF") //or ContextCompat.getColor(context, R.color.yourColor)
                     );
 
 new Metadata.Builder()
@@ -494,8 +498,8 @@ new Metadata.Builder()
 ```kotlin
 
 val uiConfig = UIConfig(
-                    buttonColor = Color.parseColor("#EF0404"),
-                    buttonTextColor = Color.parseColor("#FFFFFF")
+                    buttonColor = Color.parseColor("#EF0404"), //or ContextCompat.getColor(context, R.color.yourColor)
+                    buttonTextColor = Color.parseColor("#FFFFFF") //or ContextCompat.getColor(context, R.color.yourColor)
                 )
 
 Metadata.Builder()
