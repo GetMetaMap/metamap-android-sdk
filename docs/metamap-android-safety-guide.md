@@ -50,32 +50,31 @@ Depending on how you configure the MetaMap [Dashboard](https://dashboard.getmati
 
 If the `High Accuracy check` is used:
 
-| Data collected | Definition |
-| --- | --- |
-| Precise location | If High Accuracy check is used: user or device physical location within an area less than 3 square kilometers, such as location provided by Android's ACCESS_FINE_LOCATION
- permission. |
+| Data collected | Definition | Permission | 
+| --- | --- | --- |
+| Precise location | If High Accuracy check is used: user or device physical location within an area less than 3 square kilometers, such as location provided by Android. | [ACCESS_FINE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION) |
 
 
 #### Biometric Verification
 
 For `Selfie Photo`
 
-| Data collected | Definition |
-| --- | --- |
-| Photos | A user's captured photo |
+| Data collected | Definition | Permission | 
+| --- | --- | --- |
+| Photos | A user's captured photo | [CAMERA](https://developer.android.com/reference/android/Manifest.permission#CAMERA) |
 
 For `Selfie Video` or `Selfie Video + Voice`
 
-| Data collected | Definition |
-| --- | --- |
-| Videos | A user’s recorded video |
+| Data collected | Definition | Permission | 
+| --- | --- | --- |
+| Videos | A user’s recorded video | [CAMERA](https://developer.android.com/reference/android/Manifest.permission#CAMERA) <br>[RECORD_AUDIO](https://developer.android.com/reference/android/Manifest.permission#RECORD_AUDIO) |
 
 #### Document Verification
 
-| Data collected | Definition |
+| Data collected | Definition
 | --- | --- |
 | Photos | A user's captured or provided photos. |
-| Files and docs | A user provided files and docs |
+| Files and docs | A user-provided files and docs |
 
 #### Custom input
 
@@ -98,7 +97,7 @@ Any data covered by the data safety scope that is required by the custom templat
 | Data collected | Definition |
 | --- | --- |
 | Photos | A user's captured or provided photos. |
-| Files and docs | A user provided files and docs |
+| Files and docs | A user-provided files and docs |
 
 #### E-signature
 
