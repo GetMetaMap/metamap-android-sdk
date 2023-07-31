@@ -13,7 +13,18 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.34.1  |
+| 3.23.0 | 3.35.0  |
+
+# Version 3.35.0
+###### 31 Jul 2023
+
+#### New Features
+
+* Added face detection to the document from the mobile side
+* Added Integrate Skip Document Functionality
+
+#### Bug Fixes
+* Fixed the issue on the last digit in the input text to put the phone number
 
 # Version 3.34.1
 ###### 28 Jun 2023
