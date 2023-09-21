@@ -44,10 +44,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.35.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.36.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.35.0')
+  implementation ('com.metamap:android-sdk:3.36.0')
   ```
 
 Then sync your project with the gradle files.
@@ -551,6 +551,47 @@ new Metadata.Builder()
 Metadata.Builder()
                 .additionalData("key1" "value")
                 .additionalData("key2" 32)
+                .build()
+```
+
+## Fonts customization
+
+To customise fonts in the SDK you need to place your fonts in ```assets/fonts``` folder like in the screenshot and pass the name through ```Metadata```
+
+<img width="366" alt="Captura de Tela 2023-09-21 às 14 56 43" src="https://github.com/GetMetaMap/metamap-android-sdk/assets/107999277/0a6ee85b-cee3-47d0-a1b4-e82b1094f23c">
+
+**Java**
+
+```java
+
+UIConfig uiConfig = new UIConfig(
+                        null,
+			null,
+			null,
+                        new FontConfig(
+				"REGULAR_FONT_NAME.ttf",
+                                "BOLD_FONT_NAME.ttf"
+			)
+                    );
+
+new Metadata.Builder()
+                .uiConfig(uiConfig)
+                .build();
+```
+
+
+**Kotlin**
+```kotlin
+
+val uiConfig = UIConfig(
+                    fontConfig = FontConfig(
+                                "REGULAR_FONT_NAME.ttf",
+                                "BOLD_FONT_NAME.ttf"
+                            )
+                )
+
+Metadata.Builder()
+                .uiConfig(uiConfig)
                 .build()
 ```
 
