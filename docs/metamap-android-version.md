@@ -13,8 +13,18 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
 | :---:   | :---: |
-| 3.23.0 | 3.35.0  |
+| 3.23.0 | 3.36.0  |
 
+
+# Version 3.36.0
+###### 21 Sep 2023
+
+#### New Features
+* SDK customization: Colors, Powered by Metamap, Fonts
+
+#### Bug Fixes
+* Fixed phone number input
+  
 # Version 3.35.0
 ###### 31 Jul 2023
 
