@@ -24,7 +24,11 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
 - Ensure that your top-level `build.gradle` references to the following repository:
 
   ```
-  mavenCentral()
+  buildscript {
+    repositories {
+        mavenCentral()
+    }
+  }
   ```
 
 - Enable Java 1.8 source compatibility.
@@ -44,10 +48,10 @@ To install the MetaMap Android SDK using [Gradle](https://gradle.org/), you will
   implementation ('com.metamap:android-sdk: <your MetaMap SDK version number>')
   ```
 
-  For example, if you are using the MetaMap Android SDK version 3.36.0, you would include the following:
+  For example, if you are using the MetaMap Android SDK version 3.37.0, you would include the following:
 
   ```
-  implementation ('com.metamap:android-sdk:3.36.0')
+  implementation ('com.metamap:android-sdk:3.37.0')
   ```
 
 Then sync your project with the gradle files.
@@ -85,13 +89,11 @@ _**Note**_ The list below shows the libraries used by Metamap SDK in its latest 
 
     ```xml
     <com.metamap.metamap_sdk.MetamapButton
-	android:id="@+id/metamapButton"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:layout_margin="16dp"
-	app:color="@color/metamapButtonColor"
-	app:textColor="@color/metamapButtonTextColor"
-	app:text="YOUR CUSTOM TEXT" />
+        android:id="@+id/metamapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:text="YOUR CUSTOM TEXT" />
     ```
 
 1.  Call `setParams` with the following arguments to authorize the app and start verification:

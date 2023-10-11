@@ -12,8 +12,20 @@ If you have an issue or ideas to improve MetaMap's Android SDK, please look at o
 # Releases
 
 | LTS version (Recommended for most users) | Current Version(Latest features) |
-| :---:   | :---: |
-| 3.23.0 | 3.36.0  |
+|:----------------------------------------:|:--------------------------------:|
+|                  3.37.0                  |              3.37.0              |
+
+# Version 3.37.0
+###### 11 Oct 2023
+
+#### New Features
+* SDK Cooldown feature
+
+#### Bug Fixes
+* Fixed crash `KoinApplication has not been started`
+* Fixed: repetitive error screen when reusage is active
+* Fixed: Removed delay of 15 seconds for unnecessary requests when reusage is enabled
+* Other fixes and improvements to prevent possible crashes
 
 
 # Version 3.36.0
