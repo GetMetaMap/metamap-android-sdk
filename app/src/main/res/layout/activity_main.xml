@@ -10,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:color="@color/metamapiButtonColor"
-        app:text="YOUR CUSTOM TEXT"
-        app:textColor="@color/metamapButtonTextColor" />
+        app:text="YOUR CUSTOM TEXT"/>
 
 </LinearLayout>
