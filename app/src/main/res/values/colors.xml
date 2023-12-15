@@ -3,6 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="metamapiButtonColor">#30B8A4</color>
-    <color name="metamapButtonTextColor">#FFFFFF</color>
+    <color name="titleTextColor">#000000</color>
+    <color name="subtitleTextColor">#888888</color>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="lineColor">#D81B60</color>
 </resources>

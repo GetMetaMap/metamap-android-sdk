@@ -1,15 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:scrollbars="vertical"
+    android:theme="@style/AppTheme">
 
-    <com.metamap.metamap_sdk.MetamapButton
-        android:id="@+id/metamapButton"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:text="YOUR CUSTOM TEXT"/>
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <Button
+            android:id="@+id/methodCall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Method Call" />
+
+        <Button
+            android:id="@+id/metamapButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Metamap Button" />
+
+        <Button
+            android:id="@+id/metadata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Metadata" />
+
+        <Button
+            android:id="@+id/onActivityResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="onActivityResult" />
+
+        <Button
+            android:id="@+id/resultApi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Result API" />
+
+        <Button
+            android:id="@+id/colorsCustomization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Colors Customization" />
+
+        <Button
+            android:id="@+id/fontCustomization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Font Customization" />
+
+        <Button
+            android:id="@+id/facematch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Facematch" />
+
+        <Button
+            android:id="@+id/cooldown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Cooldown" />
+
+        <Button
+            android:id="@+id/onDemandConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="On Demand Config" />
+
+        <Button
+            android:id="@+id/encryptionConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Encryption Config" />
+
+        <Button
+            android:id="@+id/smartCapture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Smart Capture" />
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,16 +1,10 @@
 package com.matilock.matiintegrationdemo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.metamap.metamap_sdk.Metadata;
-import com.metamap.metamap_sdk.MetamapButton;
-import com.metamap.metamap_sdk.MetamapSdk;
-import com.metamap.smartcapture.SmartCaptureManager;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,83 +13,71 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        MetamapSdk.INSTANCE.setSmartCaptureProvider(new SmartCaptureManager());
-        MetamapButton btn = findViewById(R.id.metamapButton);
-
-        btn.setParams(
-                this,
-                "YOUR_CLIENT_ID",
-                "YOUR_FLOW_ID",
-                new Metadata.Builder()
-                        .with("userId", "qwfguweo")
-                        .with("type", 2)
-                        .build());
-
+        findViewById(R.id.methodCall).setOnClickListener(listener);
+        findViewById(R.id.metamapButton).setOnClickListener(listener);
+        findViewById(R.id.metadata).setOnClickListener(listener);
+        findViewById(R.id.onActivityResult).setOnClickListener(listener);
+        findViewById(R.id.resultApi).setOnClickListener(listener);
+        findViewById(R.id.colorsCustomization).setOnClickListener(listener);
+        findViewById(R.id.fontCustomization).setOnClickListener(listener);
+        findViewById(R.id.facematch).setOnClickListener(listener);
+        findViewById(R.id.cooldown).setOnClickListener(listener);
+        findViewById(R.id.onDemandConfig).setOnClickListener(listener);
+        findViewById(R.id.encryptionConfig).setOnClickListener(listener);
+        findViewById(R.id.smartCapture).setOnClickListener(listener);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == MetamapSdk.DEFAULT_REQUEST_CODE) {
-            if (resultCode == Activity.RESULT_OK && data != null) {
-                // There are no request codes
-                Toast.makeText(
-                        this,
-                        "onActivityResult Verification success! " +
-                                "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
-                                "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
-                        Toast.LENGTH_SHORT
-                ).show();
-            } else {
-                if (data != null) {
-                    Toast.makeText(
-                            this,
-                            "onActivityResult Verification cancelled! " +
-                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
-                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
-                            Toast.LENGTH_SHORT
-                    ).show();
-                } else {
-                    Toast.makeText(
-                            this,
-                            "onActivityResult Verification cancelled!",
-                            Toast.LENGTH_SHORT
-                    ).show();
-                }
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
+    private final View.OnClickListener listener = v -> {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.methodCall:
+                intent = new Intent(MainActivity.this, MethodCallActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.metamapButton:
+                intent = new Intent(MainActivity.this, MetamapButtonActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.metadata:
+                intent = new Intent(MainActivity.this, MetadataActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.onActivityResult:
+                intent = new Intent(MainActivity.this, OnActivityResultActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.resultApi:
+                intent = new Intent(MainActivity.this, ResultApiActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.colorsCustomization:
+                intent = new Intent(MainActivity.this, ColorsCustomizationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.fontCustomization:
+                intent = new Intent(MainActivity.this, FontCustomizationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.facematch:
+                intent = new Intent(MainActivity.this, FaceMatchActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.cooldown:
+                intent = new Intent(MainActivity.this, CooldownActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.onDemandConfig:
+                intent = new Intent(MainActivity.this, OnDemandConfigActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.encryptionConfig:
+                intent = new Intent(MainActivity.this, EncryptionConfigActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.smartCapture:
+                intent = new Intent(MainActivity.this, SmartCaptureActivity.class);
+                startActivity(intent);
+                break;
         }
-    }
-
-    /*
-     * In case you want to use Activity Result API
-     */
-//    ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
-//            new ActivityResultContracts.StartActivityForResult(),
-//            result -> {
-//                Intent data = result.getData();
-//                if (data == null) {
-//                    Toast.makeText(MainActivity.this, "Verification cancelled", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                if (result.getResultCode() == Activity.RESULT_OK) {
-//                    // There are no request codes
-//                    Toast.makeText(
-//                            MainActivity.this,
-//                            "Verification success! " +
-//                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
-//                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
-//                            Toast.LENGTH_SHORT
-//                    ).show();
-//                } else {
-//                    Toast.makeText(
-//                            MainActivity.this,
-//                            "Verification cancelled! " +
-//                                    "VerificationId:" + data.getStringExtra(MetamapSdk.ARG_VERIFICATION_ID) +
-//                                    "IdentityId: " + data.getStringExtra(MetamapSdk.ARG_IDENTITY_ID),
-//                            Toast.LENGTH_SHORT
-//                    ).show();
-//                }
-//            });
+    };
 }
