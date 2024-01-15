@@ -24,17 +24,16 @@ public class ColorsCustomizationActivity extends AppCompatActivity {
         int backgroundColor = ContextCompat.getColor(this, R.color.backgroundColor);
         int lineColor = ContextCompat.getColor(this, R.color.lineColor);
 
-        btn.setParams(
-                this,
-                "YOUR_CLIENT_ID",
-                "YOUR_FLOW_ID",
-                new Metadata.Builder()
-                        .uiConfig(
-                                new UIConfig(
-                                        null, null, null, accentColor, titleTextColor,  //These colors are used in the loading screen,
-                                        subtitleTextColor, backgroundColor, lineColor   //Other screens apply the colors from the dashboard configuration
-                                )
-                        )
-                        .build());
+        UIConfig uiConfig = new UIConfig.Builder()
+                .accentColor(accentColor)
+                .titleTextColor(titleTextColor)  //These colors are used in the loading screen,
+                .subtitleTextColor(subtitleTextColor)
+                .backgroundColor(backgroundColor)
+                .lineColor(lineColor)
+                .build();
+        Metadata metadata = new Metadata.Builder()
+                .uiConfig(uiConfig)
+                .build();
+        btn.setParams(this, "YOUR_CLIENT_ID", "YOUR_FLOW_ID", metadata);
     }
 }

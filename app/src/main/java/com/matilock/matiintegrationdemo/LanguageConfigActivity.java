@@ -17,14 +17,17 @@ public class LanguageConfigActivity extends AppCompatActivity {
         setContentView(R.layout.activity_metamap_button);
 
         MetamapButton btn = findViewById(R.id.metamapButton);
-
+        UIConfig uiConfig = new UIConfig.Builder()
+                .fixedLanguage(MetamapLanguage.SPANISH)
+                .build();
+        Metadata metadata = new Metadata.Builder()
+                .uiConfig(uiConfig)
+                .build();
         btn.setParams(
                 this,
                 "YOUR_CLIENT_ID",
                 "YOUR_FLOW_ID",
-                new Metadata.Builder()
-                        .uiConfig(new UIConfig(MetamapLanguage.SPANISH))
-                        .build()
+                metadata
         );
     }
 }

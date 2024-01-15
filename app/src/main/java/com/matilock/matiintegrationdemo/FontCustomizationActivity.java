@@ -18,20 +18,22 @@ public class FontCustomizationActivity extends AppCompatActivity {
 
         MetamapButton btn = findViewById(R.id.metamapButton);
 
+        FontConfig fontConfig= new FontConfig(
+                "comic_neue.ttf",
+                "comic_neue_bold.ttf"
+        );
+        UIConfig uiConfig = new UIConfig.Builder()
+                .fontConfig(fontConfig)
+                .build();
+        Metadata metadata = new Metadata.Builder()
+                .uiConfig(uiConfig)
+                .build();
+        btn.setParams(this, "YOUR_CLIENT_ID", "YOUR_FLOW_ID", metadata);
         btn.setParams(
                 this,
                 "YOUR_CLIENT_ID",
                 "YOUR_FLOW_ID",
-                new Metadata.Builder()
-                        .uiConfig(
-                                new UIConfig(null, null, null, null, null, null, null, null,
-                                        new FontConfig(
-                                                "comic_neue.ttf",
-                                                "comic_neue_bold.ttf"
-                                        )
-                                )
-                        )
-                        .build()
+                metadata
         );
 
     }
