@@ -48,7 +48,7 @@ repositories{
 
 dependencies {
     //Dependency for MetaMap
-    implementation ('com.metamap:android-sdk:3.38.0')
+    implementation ('com.metamap:android-sdk:3.42.2')
     implementation "com.metamap:android-sdk-smart-capture:0.2.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
