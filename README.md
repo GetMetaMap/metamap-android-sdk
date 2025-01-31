@@ -1,3 +1,3 @@
 # MetaMap for Android Usage Guide
 
-* [Metamap Android SDK Documentation](https://docs.metamap.com/docs/quick-start)
+* [Metamap Android SDK Documentation](https://dash.readme.com/project/mati/v1.4/docs/quick-start-3)
